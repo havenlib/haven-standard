@@ -1,0 +1,12 @@
+{% if error %}
+    <div class="alert alert-error cont_error">{{ error.message }}</div>
+{% endif %}
+
+<div class="cont_input"><input type="text" id="username" name="_username" value="{{ last_username }}" required="required"></div>
+<div class="cont_label"><label for="defi_login_username" class=" required">Mon courriel</label></div>
+
+<div class="cont_input">    <input type="password" id="password" name="_password" required="required"></div>
+<div class="cont_label"><label for="defi_login_password" class=" required">Mon mot de passe</label></div>
+
+ <input type="hidden" id="_token" value="{{ csrfToken }}">
+{{ form_widget(login_form._token) }}

@@ -1,0 +1,191 @@
+@import "mixin.less";
+@import "color.less";
+@import "size.less";
+#barup{
+    //position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 64px;
+dislay: none;
+}
+#admin{    
+    height: 100%;
+    > div{
+        display: inline-block;
+        vertical-align: top;
+    }
+    //background-color: #aaffff;
+}
+
+.centre{
+    text-align: center;
+}
+
+#navigation, .nav, #help{
+    width: 15%;
+    ul{
+        margin: 0;
+        padding-left: 0;
+    }
+    li{
+        list-style-type: none;
+        a{
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+#navigation, #help, #edition{
+    padding-top: 60px;
+    padding-left: 24px;    padding-left: 1.5rem;
+    padding-right: 24px;    padding-right: 1.5rem;
+    min-height: 100%;
+}
+#help{
+    background-color: @evorange;
+}
+#navigation{
+    background-color: @blue;
+}
+
+#edition{
+    width: 70%;
+}
+
+button{
+        background-color: @evorange;
+	.linear-grad(@evorange, @orange);
+	padding: 8px 18px;	padding: 0.5rem 1.125rem;
+        .rounded-corners(48px);        .cool-corners();
+        .effect(all, .5s);
+	font-size: 16px;	font-size: 1rem;
+        float: right;
+        color: #444;
+        &:hover {
+		color:#fff;
+		border-color:#3278BE;
+	}
+        &:active {
+            background:#4195DD;
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#003C82), to(#4195DD));
+            background:-moz-linear-gradient(0% 90% 90deg, #4195DD, #003C82);
+        }
+}
+.nav{
+    li{
+	.linear-grad(@evorange, @orange);
+        padding: 12px;        padding: .75rem;
+        .rounded-top(8px);        .rounded-top(.5rem);
+        .effect(all, .5s);
+        display: inline-block;
+        a{
+            color: #444;
+            text-decoration: none;
+        }
+        &:hover {
+            a{
+                color: #FFF;
+            }
+	}
+        &.active{
+            background:#4195DD;
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#003C82), to(#4195DD));
+            background:-moz-linear-gradient(0% 90% 90deg, #4195DD, #003C82);
+            a{
+                color: #FFF;
+            }
+        }
+    }
+}
+fieldset{
+    margin: 0;
+    padding:10px;    padding:.625rem;
+}
+
+
+label{
+    width:10%;
+    padding-top: 7px;    padding-top: 0.4375rem;
+    margin-right: 8px;    margin-right: 0.5rem;
+    font-size: 16px;    font-size: 1rem;
+    line-height: 24px;    line-height: 1.5rem;
+    margin-bottom: 5px;    margin-bottom: .3125rem;
+    margin-top: 0 ;
+    text-align: right;
+    display: inline-block;
+}
+input, textarea{
+    .rounded-corners(8px);        .rounded-corners(.5rem);
+    font-size: 16px;    font-size: 1rem;
+    line-height: 24px;    line-height: 1.5rem;
+    padding-top: 4px;    padding-top: .25rem;
+    margin-bottom: 3px;   margin-bottom: .1875rem;
+    margin-top: 0 ;
+    display: inline-block;
+    border: 1px inset;
+}
+textarea{
+    margin-bottom: -8px;    margin-bottom: -.5rem;
+    width: 89%;
+    padding-bottom: 2px;
+}
+
+select, input[type=button]{
+	.linear-grad(@evorange, @orange);
+border: 2px outset buttonface;
+       // height: 24px;
+        margin-top: 6px;  // margin-top: 0.4375rem;
+        margin-bottom: 4px;  // margin-bottom: 0.3125rem;
+	//padding: 8px 18px;	padding: 0.5rem 1.125rem;
+        .rounded-corners(8px);        .rounded-corners(.5rem);
+        .effect(all, .5s);
+	font-size: 16px;	font-size: 1rem;
+        color: #444;
+        &:hover {
+		color:#fff;
+		border-color:#3278BE;
+	}
+        &:active {
+            background:#4195DD;
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#003C82), to(#4195DD));
+            background:-moz-linear-gradient(0% 90% 90deg, #4195DD, #003C82);
+        }
+}
+#evocatio_bundle_cmsbundle_pagetype_save{
+    height: 36px;    height: 2.25rem;
+}
+ul.contents-list{
+        margin: 0;
+        padding: 0;
+    li{
+        list-style-type: none;
+        display: inline-block;
+        input[type=button]{
+            display: inline-block;
+            padding: 0 12px;            padding: 0 .75rem;
+            margin: 0;
+            margin-top: 4px;            margin-top: .25rem;
+            margin-bottom: 4px;            margin-bottom: .25rem;
+        }
+    }
+}
+table{
+    border-collapse:collapse;
+    width: 100%;
+tr{
+    cursor: pointer;
+}
+    th{
+        font-weight: bold;
+        text-align: left;
+    }
+    td{
+        border-top: 1px solid #DDD;
+        padding: 0 px;
+    }
+    tr td:last-child{
+        text-align: right;
+    }
+}

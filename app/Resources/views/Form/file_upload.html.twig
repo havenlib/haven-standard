@@ -1,0 +1,39 @@
+
+
+{% block form_widget_compound %}
+{% spaceless %}
+    <div {{ block('widget_container_attributes') }}>
+        {% if form.parent is empty %}
+            {{ form_errors(form) }}
+        {% endif %}
+        {{ block('form_rows') }}
+        {{ form_rest(form) }}
+        </div>  
+        <div class="clear"></div>
+{% endspaceless %}
+{% endblock form_widget_compound %}
+
+
+
+{% block form_rows %}
+{% spaceless %}
+    {% if name != "files" %}
+    <div class="input_area">
+        {% set vars =  form.vars %}
+        <span><a href="{#{ path('WebsiteSiteBundle_DossierDownload', { 'id': (vars["value"]?vars["value"].getId():''), 'name': form.children().name.vars.value } ) }#}">{#{ form.children().name.vars.value}#}</a></span>
+    </div>
+    <div class="tools">
+            <span  class="delete btn" onclick="remove_item(this)">X</span>
+        </div>
+        {% endif %}    
+    {% for child in form %}
+        {% if name != "files" %}
+        {{ form_row(child, { "attr" : {"class" : "hidden"} }) }}    
+        {% else %}
+        {{ form_row(child) }}    
+        {% endif %}
+    {% endfor %}
+                <div class="clear"></div>
+{% endspaceless %}
+{% endblock form_rows %}
+                

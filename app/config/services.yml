@@ -1,0 +1,9 @@
+imports:
+    - { resource: "@HavenCoreBundle/Resources/config/services.yml" }
+    - { resource: "@HavenWebBundle/Resources/config/services.yml" }
+    - { resource: "@HavenPosBundle/Resources/config/services.yml" }
+    - { resource: "@HavenSecurityBundle/Resources/config/services.yml" }
+    - { resource: "@HavenPersonaBundle/Resources/config/services.yml" }
+    - { resource: "@HavenCmsBundle/Resources/config/services.yml" }
+    - { resource: "@HavenPortfolioBundle/Resources/config/services.yml" }
+    - { resource: "@HavenMediaBundle/Resources/config/services.yml" }

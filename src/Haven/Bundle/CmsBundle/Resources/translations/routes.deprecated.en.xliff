@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>new</source>
+                <target>new</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>person</source>
+                <target>person</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>edit</source>
+                <target>edit</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>list</source>
+                <target>list</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>show</source>
+                <target>show</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>create</source>
+                <target>create</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

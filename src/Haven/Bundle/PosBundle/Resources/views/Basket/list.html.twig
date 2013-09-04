@@ -1,0 +1,25 @@
+{%  extends "::base.html.twig" %}
+{% block theatre %}
+<ul>
+    <li>
+            {% include("HavenPosBundle:Basket:basket.html.twig") with { "entity" : entity } %}
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <a href="{{ path('HavenPosBundle_BasketEdit') }}">
+                edit basket
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('HavenPosBundle_BasketShow') }}">
+                show basket
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('HavenPosBundle_BasketReset') }}">
+                reset basket
+            </a>
+        </li>
+    </ul>
+{% endblock theatre %}

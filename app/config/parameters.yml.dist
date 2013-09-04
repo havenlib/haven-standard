@@ -1,0 +1,25 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port:     ~
+    database_name:     haven_siteweb
+    database_user:     haven
+    database_password: haven
+    
+    mailer_transport:  smtp
+    mailer_host:       smtp.haven.com
+    mailer_user:       relayuser
+    mailer_password:   3v0c4t10
+
+    locale:            fr
+    secret:            75893872b08ab6ab9c3084fb7f05d3a2
+    
+    secure_upload_dir: ../secure_content/
+    
+    notification:
+      from_adresses:
+        default: {name: "John Doe", email: "jdoe@evocatio.com"}
+        reset_password: {name: "", email: "support@evocatio.com"}
+        
+      to_adresses:
+        default: {name: "John Doe", email: "jdoe@evocatio.com"}

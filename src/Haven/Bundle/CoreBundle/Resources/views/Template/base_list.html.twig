@@ -1,0 +1,18 @@
+{%  extends "::base.html.twig" %}
+{% block inside_theater %}
+    <dl>
+        {% for entity in entities %}
+            <dt><div>{{ entity.status?'Published':'Inactive' }}</div> <strong>{{ entity.question }}</strong> <a href="{{ path('_edit', { 'id': entity.id }) }}">edit</a> <a href="{{ path('_show', { 'id': entity.id }) }}">show</a> </dt>
+            <dd>{{ entity.reponse }}</dd>
+        {% else %}
+            aucune entré
+        {% endfor %}
+    </dl>
+<ul>
+    <li>
+        <a href="{{ path('_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock inside_theater %}

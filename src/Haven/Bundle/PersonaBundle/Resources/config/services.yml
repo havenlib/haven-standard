@@ -1,0 +1,12 @@
+services:
+  haven_persona.persona.read_handler:
+      class:     Haven\Bundle\PersonaBundle\Lib\Handler\PersonaReadHandler
+      arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+      
+  haven_persona.persona.persistence_handler:
+      class:     Haven\Bundle\PersonaBundle\Lib\Handler\PersonaPersistenceHandler
+      arguments: ["@haven_persona.persona.read_handler", "@doctrine.orm.entity_manager", "@security.context"]
+
+  haven_persona.persona.form_handler:
+      class:     Haven\Bundle\PersonaBundle\Lib\Handler\PersonaFormHandler
+      arguments: ["@haven_persona.persona.read_handler", "@security.context", "@form.factory"]

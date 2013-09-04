@@ -1,0 +1,31 @@
+<h2>{{"web.add.entity" | trans | capitalize }}</h2>
+{{ form_errors(edit_form)}}
+<div class="edit-form">
+    {% block image %}
+    {% endblock image %}
+    {% block form %} 
+        <form action="{% spaceless %}{% block formhead %}{% endblock formhead %}{% endspaceless %}" method="post" {{ form_enctype(edit_form) }} >
+            {% block save_button %}
+                <div>
+                    <div>
+                        <button type="submit" class="btn">Ok</button>
+                    </div>
+                </div>
+            {% endblock save_button %}
+        {% block inside_form %}
+            {% block fields %}{% endblock fields %}
+        {% endblock inside_form %} 
+                    </form>
+    {% endblock form %}
+                </div>
+{% block back %}
+{% endblock back %}
+
+{% block javascripts %}
+    <script src="/js/sig.js" type="text/javascript"></script>
+{% endblock javascripts %}
+
+{# 
+so far takes a form block, delete block and, formhead block
+should add a title and h1 block
+#}

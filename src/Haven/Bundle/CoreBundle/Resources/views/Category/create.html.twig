@@ -1,0 +1,21 @@
+{% extends "HavenCoreBundle:Template:multilangue_add_template.html.twig" %}
+{% import "::macro/route/suffix.html.twig" as route_suffix %}
+{% block formhead %}
+    {{ route_suffix.create('haven_core_category_create', 'category') }}
+{% endblock formhead %}
+
+{% form_theme edit_form "::Form/generic_with_translations.html.twig" %}
+
+{% block form %}
+<fieldset>
+        {{ form_widget(edit_form) }}
+        <div class="hidden">
+        </div>
+</fieldset>
+{% endblock form %}
+
+{% block back %}
+    <a href="{{ route_suffix.list('haven_core_category_list', 'category') }}">
+        Back to the list
+    </a>
+{% endblock back %}

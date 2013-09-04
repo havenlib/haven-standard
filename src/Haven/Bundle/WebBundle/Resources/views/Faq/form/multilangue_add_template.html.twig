@@ -1,0 +1,13 @@
+{%  extends "HavenWebBundle:Faq:form/add_template.html.twig" %}
+
+{% block inside_form %}
+<div class="nav nav-tabs lang">{# ajouter le lang comme class pour que le javascript puisse cliqué dessus lors de l'ajout d'items addAnItem, #}
+    <ul>{% set vars = edit_form.translations.vars.prototype.0.trans_lang.vars %}
+         {% for key, translation in vars["choices"] %}
+            <li class="{% if loop.index == 1 %} active{% endif%}" data-formname="{{ edit_form.vars.id }}" data-langindex="{{ loop.index0 }}" onclick="showFormElementClass(this);
+                    return false"><a href="#" onclick="return false" data-toggle="tab">{{ translation.label }}</a></li>
+         {% endfor %}
+            </ul>
+        </div>
+        {{ parent() }}
+{% endblock inside_form %} 

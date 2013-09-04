@@ -1,0 +1,18 @@
+{%  extends "HavenCoreBundle:Template:add_template.html.twig" %}
+{% block formhead %}
+    {{ path('HavenPosBundle_PurchaseCreate') }}
+{% endblock formhead %}
+
+{% block form %}
+                <fieldset>
+                        {% include("HavenPosBundle:Purchase:purchase_form_generic.html.twig") %}
+                </fieldset>
+
+                <!-- input type=button value="add line" onclick="javascript:addAnItem('haven_bundle_posbundle_purchasetype_purchase_products')" / -->
+{% endblock form %}
+
+{% block back %}
+                <a href="{{ path('HavenPosBundle_PurchaseList') }}">
+                    Back to the list
+                </a>
+{% endblock back %}

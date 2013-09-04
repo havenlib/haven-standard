@@ -1,0 +1,24 @@
+{% macro create(route, suffix) %}
+    {% import _self as crud %}
+    {{ crud.path(route, 'create', suffix) }}
+{% endmacro %}
+
+{% macro edit(route, suffix, id) %}
+    {% import _self as crud %}
+    {{ crud.path(route, 'edit', suffix, id) }}
+{% endmacro %}
+
+{% macro show(route, suffix, id) %}
+    {% import _self as crud %}
+    {{ crud.path(route, 'show', suffix, id) }}
+{% endmacro %}
+
+{% macro list(route, suffix) %}
+    {% import _self as crud %}
+    {{ crud.path(route, 'list', suffix) }}
+{% endmacro %}
+
+{% macro path(route, keyword, suffix, id = null) %}
+    {% set parameters = {(keyword): (keyword | trans({}, 'routes')), 'suffix': (suffix | trans({}, 'routes')), 'id': id} %}
+    {{ path(route, parameters)}}
+{% endmacro %}

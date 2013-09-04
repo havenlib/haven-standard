@@ -1,0 +1,6 @@
+{%  extends "HavenPosBundle:Product:create.html.twig" %}
+{% block formhead %}
+    {{ path('haven_pos_product_edit', {'id': entity.id}) }}
+{% endblock formhead %}
+
+

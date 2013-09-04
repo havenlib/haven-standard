@@ -1,0 +1,12 @@
+
+&nbsp;
+<h1>Choisir la culture pour "{{ language.symbol }}"</h1>
+<form action="{{ path('haven_core_culture_edit', {'edit': ('edit' | trans({}, 'routes')), 'display_language': language.symbol}) }}" method="post" {{ form_enctype(edit_form) }}>
+{{ form_widget(edit_form) }}
+
+<input type="submit" value="go" />
+</form>
+<br />
+<a href="{{ path('haven_core_language_edit', {'edit': ('edit' | trans({}, 'routes'))}) }}">Choisir les langues</a>
+
+

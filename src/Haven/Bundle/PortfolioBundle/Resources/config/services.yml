@@ -1,0 +1,13 @@
+services:
+  haven_portfolio.project.read_handler:
+      class:     Haven\Bundle\PortfolioBundle\Lib\Handler\ProjectReadHandler
+      arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+      
+  haven_portfolio.project.persistence_handler:
+      class:     Haven\Bundle\PortfolioBundle\Lib\Handler\ProjectPersistenceHandler
+      arguments: ["@haven_portfolio.project.read_handler", "@doctrine.orm.entity_manager", "@security.context"]
+
+  haven_portfolio.project.form_handler:
+      class:     Haven\Bundle\PortfolioBundle\Lib\Handler\ProjectFormHandler
+      arguments: ["@haven_portfolio.project.read_handler", "@security.context", "@form.factory"]
+    

@@ -1,0 +1,17 @@
+
+{% block theatre %}
+<ul>
+    {% for entity in entities %}
+        <li>
+        {{ entity.status }} - <strong>{{ entity.title }}</strong>
+                <span>
+   {{ entity.excerpt }}
+                    </span> 
+                    <a href="{{ path("owner_site_post_display", {"slug": entity.slug})}}">show</a>
+                </li>
+    {% else %}
+                Pas d'entité
+    {% endfor %}
+{% endblock theatre %}
+
+

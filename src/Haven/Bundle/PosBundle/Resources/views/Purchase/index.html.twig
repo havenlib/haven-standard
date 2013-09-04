@@ -1,0 +1,13 @@
+{%  extends "::base.html.twig" %}
+{% block theatre %}
+{% for entity in entities %}
+    <ul>
+        <li>
+            {% include("HavenPosBundle:Purchase:purchase_generic.html.twig") with { "entity" : entity } %}
+        </li>
+    </ul>
+{% else %}
+no purchases found
+{% endfor %}
+{% endblock theatre %}
+

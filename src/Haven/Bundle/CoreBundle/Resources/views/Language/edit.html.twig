@@ -1,0 +1,20 @@
+
+
+<ul>
+{% for language in languages %}
+<li>
+    <a href="{#{ path('change_language') }}?lang={{ language.symbol }#}" >{{ language.name }} </a>
+    --->
+    <a href="{{ path('haven_core_culture_edit', {'display_language': language.symbol}) }}"> choir la culture</a>
+</li>
+{% endfor %}
+</ul>
+&nbsp;
+<form action="{{ path('haven_core_language_edit') }}" method="post" {{ form_enctype(form) }}>
+Form: {{ form_widget(form) }}
+
+<input type="submit" value="go" />
+</form>
+
+
+

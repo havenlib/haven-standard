@@ -1,0 +1,39 @@
+security:
+    firewalls:
+        secured_area:
+            pattern:    ^/
+            anonymous: ~
+            http_basic:
+                realm: "La Maison"
+            logout:
+                path:   /auth/logout
+                target: /
+            form_login:
+                login_path: /auth/login
+                check_path: /auth/login_check
+                default_target_path: /auth/success
+                use_referer: false
+                use_forward: false
+                post_only: true
+                
+    providers:
+        administrators:
+            entity: { class: HavenSecurityBundle:User }
+
+    encoders:
+        Haven\Bundle\SecurityBundle\Entity\User:
+          algorithm: sha512
+#          encode_as_base64: true
+#          iterations: 1
+          
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH ]
+
+#    access_control:
+#        - { path: "^/[a-z_A-Z]{5}/admin", roles: IS_AUTHENTICATED_FULLY}
+#        - { path: "^/[a-z]{2}/admin", roles: IS_AUTHENTICATED_FULLY}
+#        - { path: ^/admin/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/admin/login/check$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/mon-espace, roles: DEFAULT }
+#        - { path: /admin(.*), roles: ROLE_ADMIN }

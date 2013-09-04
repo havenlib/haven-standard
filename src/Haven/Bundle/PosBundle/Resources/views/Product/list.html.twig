@@ -1,0 +1,44 @@
+<h2>{{"pos.product.list" | trans | capitalize}}</h2>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>{{"price" | trans | capitalize}}Price</th>
+            <th>{{"status" | trans | capitalize}}Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('haven_pos_product_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.price }}</td>
+            <td>{{ entity.status }}</td>
+            <td>
+            <ul>
+                <li>
+                    <a href="{{ path('haven_pos_product_show', { 'id': entity.id }) }}">show</a>
+                </li>
+                <li>
+                    <form action="{{ path('haven_pos_product_delete', {'id': entity.id}) }}" method="post">
+                        {{ form_widget(delete_forms[entity.getId()]) }}
+                    </form>
+                </li>
+                <li>
+                    <a href="{{ path('haven_pos_product_edit', { 'id': entity.id }) }}">edit</a>
+                </li>
+            </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('haven_pos_product_create') }}">
+            {{ "product.create.a.new.entity" | trans | capitalize }}
+        </a>
+    </li>
+</ul>

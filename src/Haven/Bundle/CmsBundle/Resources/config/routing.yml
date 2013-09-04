@@ -1,0 +1,13 @@
+#HavenCmsBundle_Page:
+#    resource: "@HavenCmsBundle/Controller/PageController.php"
+#    type:     annotation
+#    prefix: /{_locale}/
+#    defaults:
+#      admin: admin
+#    requirements: 
+#      _locale: fr|en
+#      admin: "admin"
+#      create: "create|creer"
+#      edit: "edit|editer"
+#      list: "list|lister"
+#      show: "show|afficher"

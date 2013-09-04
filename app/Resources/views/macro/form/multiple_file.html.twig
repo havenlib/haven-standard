@@ -1,0 +1,18 @@
+{# modified widget pour ajouter les [] pour les fichiers multiples #}
+{% block form_widget_simple %}
+{% spaceless %}
+    {% set type = type|default('text') %}
+{% if type == "file" and attr.multiple is defined %} 
+    {% set full_name = full_name~"[]" %}
+    <ul>
+        <li>
+            <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}  />
+        </li>
+    </ul>
+    <button class="btn" onclick="addUploadField(this, '{{ id}}', '{{ full_name }}');
+    return false;">+</button>
+{% else %}
+    <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}  />
+{% endif %}
+{% endspaceless %}
+{% endblock form_widget_simple %}

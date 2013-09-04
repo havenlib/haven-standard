@@ -1,0 +1,25 @@
+services:
+  haven_web.faq.read_handler:
+      class:     Haven\Bundle\WebBundle\Lib\Handler\FaqReadHandler
+      arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+      
+  haven_web.faq.persistence_handler:
+      class:     Haven\Bundle\WebBundle\Lib\Handler\FaqPersistenceHandler
+      arguments: ["@haven_web.faq.read_handler", "@doctrine.orm.entity_manager", "@security.context"]
+
+  haven_web.faq.form_handler:
+      class:     Haven\Bundle\WebBundle\Lib\Handler\FaqFormHandler
+      arguments: ["@haven_web.faq.read_handler", "@security.context", "@form.factory"]
+      
+  haven_web.post.persistence_handler:
+      class:     Haven\Bundle\WebBundle\Lib\Handler\PostPersistenceHandler
+      arguments: ["@haven_web.post.read_handler", "@doctrine.orm.entity_manager", "@security.context"]
+      
+  haven_web.post.read_handler:
+      class:     Haven\Bundle\WebBundle\Lib\Handler\PostReadHandler
+      arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+
+  haven_web.post.form_handler:
+      class:     Haven\Bundle\WebBundle\Lib\Handler\PostFormHandler
+      arguments: ["@haven_web.post.read_handler", "@security.context", "@form.factory"]
+    

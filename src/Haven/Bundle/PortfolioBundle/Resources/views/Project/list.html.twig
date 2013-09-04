@@ -1,0 +1,55 @@
+<h2>{{"portfolio.project.list" | trans}}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>{{"portfolio.status" | trans | capitalize }}</th>
+            <th>{{"portfolio.name" | trans | capitalize }}</th>
+            <th>{{"portfolio.description" | trans | capitalize }}</th>
+            <th>{{"portfolio.date" | trans | capitalize }}</th>
+            <th>{{"portfolio.author" | trans | capitalize }}</th>
+            <th>{{"portfolio.createdat" | trans | capitalize }}</th>
+            <th>{{"portfolio.updatedat" | trans | capitalize }}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="sortable">
+        {% for entity in entities %}
+        <tr>
+            <td>{{ entity.id }}</td>
+            <td>{{ entity.status }}</td>
+            <td>{{ entity.name }}</td>
+            <td>{{ entity.description }}</td>
+            <td>{{ entity.date | date("web.date.format" | trans) }}</td>
+            <td>{{ entity.author }}</td>
+            <td>{{ entity.createdat | date("web.date.format" | trans) }}</td>
+            <td>{{ entity.updatedat | date("web.date.format" | trans) }}</td>
+            <td>
+                <ul>
+                    <li><a href="{{ path('haven_portfolio_project_edit', {'id': entity.id}) }}">{{"portfolio.to.edit" | trans | capitalize }}</a></li>
+                    <li><a href="{{ path('haven_portfolio_project_show', {'id': entity.id}) }}">{{"portfolio.to.show" | trans | capitalize }}</a></li>
+                    <li>
+                        <form action="{{ path('haven_portfolio_project_delete', {'id': entity.id}) }}" method="post">
+                            {{ form_widget(delete_forms[entity.getId()]) }}
+                        </form>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">
+                    {{ "portfolio.no.entities" |trans }}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<ul>
+    <li>
+        <a href="{{ path('haven_portfolio_project_create') }}">
+            {{ "portfolio.create.a.new.entity" | trans | capitalize }}
+        </a>
+    </li>
+</ul>
+

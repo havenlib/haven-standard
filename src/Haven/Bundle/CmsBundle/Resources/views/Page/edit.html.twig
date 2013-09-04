@@ -1,0 +1,13 @@
+{%  extends "HavenCmsBundle:Page:create.html.twig" %}
+{% import "::macro/route/crud.html.twig" as _route_crud %}
+{% block formhead %}
+    {{ _route_crud.path('haven_cms_page_edit', 'edit',entity.id) }}
+{% endblock formhead %}
+{% block delete %}
+<li>
+   {# <form action="{{ path('HavenPersonaBundle_PersonDelete', { 'id': entity.id }) }}" method="post">
+        {{ form_widget(delete_form) }}
+        <button type="submit">Delete</button>
+    </form>#}
+</li>
+{% endblock delete %}

@@ -1,0 +1,50 @@
+{%  extends "OwnerSiteBundle::base_admin.html.twig" %}
+{% block inside_theater %}
+<h1>Faq</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Actif</th>
+            <td>{{ entity.status }}</td>
+        </tr>
+        <tr>
+            <th>Question</th>
+            <td>{{ entity.question }}</td>
+        </tr>
+        <tr>
+            <th>Reponse</th>
+            <td>{{ entity.reponse | raw}}</td>
+        </tr>
+    </tbody>
+</table>
+
+        <a href="{{ route_i18n.path('owner_site_faq_edit', {'id': entity.id} , ['edit']) }}">
+            Edit
+        </a>
+   {# 
+<ul class="record_actions">
+<li>
+        <a href="{{ _route_crud.path('owner_site_faq_list', 'list') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+    </li>
+   {# <li>
+        <form action="{{ path('HavenFaqBundle_FaqDelete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li> #}
+   {# 
+</ul>
+#}
+{% endblock inside_theater %}
+{% block aside %}
+    {#% render "HavenCoreBundle:Core:i18nSwitcher" with {"_locale" : app.getRequest().get("_locale")} %#}
+{% endblock aside %}

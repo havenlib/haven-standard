@@ -1,0 +1,29 @@
+{% extends "HavenMediaBundle:ImageFile:form/add_template.html.twig" %}
+
+{% block formhead %}
+    {{ path('haven_media_imagefile_resize', {"id": entity.id}) }}
+{% endblock formhead %}
+
+{% block image %}
+        <img  alt="{{ entity.alt }}" src="{{path("haven_media_imagefile_show", {"id": entity.id})}}" />
+        <br />
+        {{ entity.name }}
+{% endblock image %}
+{% block save_button %}
+    {#{ form_widget(edit_form.save) }#}
+{% endblock save_button %}
+
+{% block fields %}
+<fieldset>
+    {{ form_rest(edit_form) }}
+</fieldset>
+{% endblock fields %}
+{% block delete %}
+<li>
+   {# <form action="{{ path('HavenFaqBundle_FaqDelete', { 'id': entity.id }) }}" method="post">
+        {{ form_widget(delete_form) }}
+        <button type="submit">Delete</button>
+    </form>#}
+</li>
+{% endblock delete %}
+

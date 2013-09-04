@@ -1,0 +1,4 @@
+{%  extends "HavenSecurityBundle:User:create.html.twig" %}
+{% block formhead %}
+    {{ path('haven_security_user_edit', {'id': entity.id}) }}
+{% endblock formhead %}

@@ -1,0 +1,43 @@
+{% block translation_widget %}
+{% spaceless %}
+    <div class="inside">
+    {% if form is empty   %}  
+        {% for proto in prototype %}
+            {# here create one form for each language, removing the hidden from the first line, so you dont have to do it with javascript,  
+            note that the hidden is accompanied by a trans class to make sur not to remove other hiddens in the prototype #}
+            {{ form_row(proto) }}
+        {% endfor %} 
+    {% else %}
+            {% if prototype is defined %}
+            {% set protofinal = "" %}
+            {% for langue in prototype %}
+                {% set protofinal = protofinal~form_row(langue) %}
+            {% endfor %}
+                {% set attr = attr|merge({'data-prototype': protofinal }) %}
+            {% endif %}
+        {{ block('form_widget')}}
+    {% endif %}
+    </div>
+{% endspaceless %}
+{% endblock translation_widget %}
+
+
+{% block form_widget %}
+{% spaceless %}
+    {% if compound %}
+    {% if "trans_lang" in form|keys %}
+    {# set class to hidden if name not 0, so basically hide all but first for translation list #}
+        {% if 0 != name %}
+            {% set attr = attr|merge({'class' : 'trans_div hidden'}) %}
+        {% elseif "translations" != name %}
+            {% set attr = attr|merge({'class' : 'trans_div '}) %}
+            {#% set attr = attr|merge({'class' : 'trans_div '~dump(form | keys)}) %#}
+        {% endif %}
+{% endif %}
+        {{ block('form_widget_compound') }}
+    {% else %}
+        {{ block('form_widget_simple') }}
+    {% endif %}
+{% endspaceless %}
+{% endblock form_widget %}
+

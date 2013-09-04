@@ -1,0 +1,22 @@
+{%  extends "::base.html.twig" %}
+{% import "::macro/route/suffix.html.twig" as route_suffix %}
+{% block inside_theater %}
+    <dl>
+        {% for entity in entities %}
+            <div>
+                <div> {{ entity.name }}</div> 
+                <a href="{{ route_suffix.edit('haven_core_category_edit', 'category', entity.id) }}">edit</a> 
+                <a href="{{ route_suffix.show('haven_core_category_show', 'category', entity.id) }}">show</a> 
+            </div>
+        {% else %}
+            aucune entré
+        {% endfor %}
+    </dl>
+<ul>
+    <li>
+        <a href="{{ route_suffix.create('haven_core_category_create', 'category') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock inside_theater %}

@@ -1,0 +1,77 @@
+<h2>{{"web.post.list" | trans | capitalize}}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>{{"web.status" | trans | capitalize }}</th>
+            <th>{{"web.rank" | trans | capitalize }}</th>
+            <th>{{"web.title" | trans | capitalize }}</th>
+            <th>{{"web.subtitle" | trans | capitalize }}</th>
+            <th>{{"web.slug" | trans | capitalize }}</th>
+            <th>{{"web.excerpt" | trans | capitalize }}</th>
+            <th>{{"web.content" | trans | capitalize }}</th>
+            <th>{{"web.categories" | trans | capitalize }}</th>
+            <th>{{"web.created.at" | trans | capitalize }}</th>
+            <th>{{"web.updated.at" | trans | capitalize }}</th>
+            <th>{{"web.post.begin.at" | trans | capitalize }}</th>
+            <th>{{"web.post.end.at" | trans | capitalize }}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="sortable">
+        {% for entity in entities %}
+        <tr>
+            <td>{{ entity.id }}</td>
+            <td>{{ entity.status }}</td>
+            <td>
+                <form action="{{ path('haven_web_post_rank', {'id': entity.id}) }}" method="post">
+                    {{ form_widget(rank_forms[entity.getId()]) }}
+                </form>
+            </td>
+            <td>{{ entity.title }}</td>
+            <td>{{ entity.subtitle }}</td>
+            <td>{{ entity.slug }}</td>
+            <td>{{ entity.excerpt }}</td>
+            <td>{{ entity.content }}</td>
+            <td>
+                <ul>
+                {% for category in entity.categories %}
+                    <li>
+                        {{ category.name }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </td>
+            <td>{{ entity.createdat | date("web.date.format" | trans) }}</td>
+            <td>{{ entity.updatedat | date("web.date.format" | trans) }}</td>
+            <td>{{ entity.postbeginat | date("web.date.format" | trans) }}</td>
+            <td>{{ entity.postendat | date("web.date.format" | trans) }}</td>
+            <td>
+                <ul>
+                    <li><a href="{{ path('haven_web_post_edit', {'id': entity.id}) }}">{{"web.to.edit" | trans | capitalize }}</a></li>
+                    <li>
+                        <form action="{{ path('haven_web_post_delete', {'id': entity.id}) }}" method="post">
+                            {{ form_widget(delete_forms[entity.getId()]) }}
+                        </form>
+                    </li>
+                    <li><a href="{{ path('haven_web_post_show', {'id': entity.id}) }}">{{ "web.show" | trans | capitalize }}</a></li>
+                </ul>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="13">
+                {{ "web.no.entities" |trans }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<ul>
+    <li>
+        <a href="{{ path('haven_web_post_create') }}">
+            {{ "web.create.a.new.entity" | trans | capitalize }}
+        </a>
+    </li>
+</ul>
+

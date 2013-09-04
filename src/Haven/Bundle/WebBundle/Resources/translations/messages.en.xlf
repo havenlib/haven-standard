@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>web.status</source>
+                <target>status</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>web.rank</source>
+                <target>rank</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>web.question</source>
+                <target>question</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>web.response</source>
+                <target>response</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>web.no.entities</source>
+                <target>no entities</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>web.create.a.new.entity</source>
+                <target>create a new entity</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>web.back.to.the.list</source>
+                <target>back to the list</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>web.to.edit</source>
+                <target>edit</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>web.perform.ranking</source>
+                <target>rank</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>web.add.entity</source>
+                <target>add entity</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>web.save.faq</source>
+                <target>save FAQ</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>web.date.format</source>
+                <target>m/d/Y</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>web.title</source>
+                <target>title</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>web.subtitle</source>
+                <target>subtitle</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>web.slug</source>
+                <target>slug</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>web.excerpt</source>
+                <target>excerpt</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>web.categories</source>
+                <target>categories</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>web.created.at</source>
+                <target>created at</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>web.updated.at</source>
+                <target>updated at</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>web.post.begin.at</source>
+                <target>post begin at</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>web.post.end.at</source>
+                <target>post end at</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>web.post.list</source>
+                <target>post list</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>web.content</source>
+                <target>content</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>web.show</source>
+                <target>show</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>web.display</source>
+                <target>display</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>web.faq.list</source>
+                <target>faq(s) list</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

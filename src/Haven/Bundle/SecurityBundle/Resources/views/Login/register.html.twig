@@ -1,0 +1,63 @@
+{% if form_errors(register_form) is not empty %}
+<div class="alert alert-error">
+    {{ form_errors(register_form) }}
+</div>
+{% endif %}
+<div>
+    <div>
+        <label>{{ "Civilite"|trans|capitalize }}</label>
+    </div>
+    <span>
+        {{ form_widget(register_form.contact.civilite.1)}}
+        <label>{{ "Mme"|trans|capitalize }}</label>
+        {{ form_widget(register_form.contact.civilite.2)}}
+        <label>{{ "M"|trans|capitalize }}</label>
+    </span>
+</div>
+<div>
+    <div><label>{{ "mon.prenom"|trans|capitalize }}</label></div>
+    <span>
+        {{ form_widget(register_form.contact.firstname)}}
+    </span>
+</div>
+<div>
+    <div>
+        <label>{{ "mon.nom"|trans|capitalize }}</label>
+    </div>
+    <span>
+        {{ form_widget(register_form.contact.lastname)}}
+    </span>
+</div>
+{% if form_errors(register_form.email) is not empty %}
+<div class="alert alert-error">
+    {{ form_errors(register_form.email) }}
+</div>
+{% endif %}
+<div>
+    <div>
+        <label>{{ "mon.courriel"|trans|capitalize }}</label>
+    </div>
+    <span>
+        {{ form_widget(register_form.email) }}
+    </span>
+</div>
+{% if form_errors(register_form.plainPassword) is not empty %}
+<div class="alert alert-error">
+    {{ form_errors(register_form.plainPassword) }}
+</div>
+{% endif %}
+<div>
+
+    <div><label>{{ "Mot.de.passe"|trans|capitalize }}</label></div>
+    <span>
+        {{ form_widget(register_form.plainPassword['first']) }}
+    </span>
+</div>
+<div>
+
+    <div><label>{{ "Repetez.mot.de.passe"|trans|capitalize }}</label></div>
+    <span>
+        {{ form_widget(register_form.plainPassword['second']) }}
+    </span>
+</div>
+{{ form_widget(register_form._token) }}

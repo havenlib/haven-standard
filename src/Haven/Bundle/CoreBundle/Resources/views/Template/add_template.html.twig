@@ -1,0 +1,35 @@
+{%  extends "::base.html.twig" %}
+{% block inside_theater %}
+<h1>Ajouter/Modifier une entite</h1>
+
+    {{ form_errors(edit_form)}}
+<div class="edit-form">
+    <form action="{% block formhead %}{% endblock formhead %}" method="post" {{ form_enctype(edit_form) }} >
+    {% block form %}
+    {% endblock form %}
+            <div>
+                <div>
+                    <input type="submit" value="OK">
+                </div>
+            </div>
+        </form>
+    </div>
+    <ul>
+        <li>
+    {% block back %}
+    {% endblock back %}
+            </li>
+    {% block delete %}
+    {% endblock delete %}
+        </ul>
+{% endblock inside_theater %}
+
+{% block javascripts %}
+    {{ parent() }}
+        <script src="/js/sig.js" type="text/javascript"></script>
+{% endblock javascripts %}
+
+{# 
+so far takes a form block, delete block and, formhead block
+should add a title and h1 block
+#}

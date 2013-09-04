@@ -1,0 +1,59 @@
+haven_corebundle:
+    resource: "@HavenCoreBundle/Controller"
+    type:     annotation
+    prefix: /{_locale}/
+    requirements:
+      _locale: fr|en
+      
+#HavenCoreBundle_Language:
+#    resource: "@HavenCoreBundle/Controller/LanguageController.php"
+#    type:     annotation
+#    prefix: /{_locale}/
+#    requirements: 
+#      _locale: fr|en
+#      
+#HavenCoreBundle_Culture:
+#    resource: "@HavenCoreBundle/Controller/CultureController.php"
+#    type:     annotation
+#    prefix: /{_locale}/
+#    requirements: 
+#      _locale: fr|en
+#      
+#      
+#      _locale: fr|en
+#      
+#HavenCoreBundle_All:
+#    resource: "@HavenCoreBundle/Controller/"
+#    type:     annotation
+#    prefix: /{_locale}/
+#    defaults:
+#      admin: admin
+#    requirements:
+#      admin:    "admin"
+#      edit:     "edit|editer"
+#      list:     "list|lister"
+#      show:     "show|afficher"
+#      create:   "create|creer"
+#      _locale: fr|en
+#
+#HavenCoreBundle_Core:
+#    resource: "@HavenCoreBundle/Controller/CoreController.php"
+#    type:     annotation
+#    prefix: /{_locale}/core/
+#    requirements: 
+#      _locale: fr|en
+#      
+#HavenCoreBundle_Category:
+#    resource: "@HavenCoreBundle/Controller/CategoryController.php"
+#    type:     annotation
+#    prefix: /{_locale}/
+#    defaults:
+#      admin: admin
+#      discriminator: category
+#    requirements:
+#      admin:    "admin"
+#      edit:     "edit|editer"
+#      list:     "list|lister"
+#      show:     "show|afficher"
+#      create:   "create|creer"
+#      suffix:   "category|categorie"

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>security.status</source>
+                <target>statut</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>security.locked</source>
+                <target>verrouillée</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>security.username</source>
+                <target>nom d'utilisateur</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>security.email</source>
+                <target>courriel</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>security.no.entities</source>
+                <target>pas d'entités</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>security.create.a.new.entity</source>
+                <target>créer une nouvelle entité</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>security.back.to.the.list</source>
+                <target>retourner à la liste</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>security.to.edit</source>
+                <target>editer</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>security.password</source>
+                <target>mot de passe</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>security.add.entity</source>
+                <target>ajouter une entité</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>security.save.entity</source>
+                <target>enregistrer l'utilisateur</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>security.date.format</source>
+                <target>d/m/Y</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>security.salt</source>
+                <target>sel</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>security.created.at</source>
+                <target>date de création</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>security.content</source>
+                <target>contenu</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>security.show</source>
+                <target>afficher</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>security.display</source>
+                <target>visualiser</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>security.created.by</source>
+                <target>créer par</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>security.user.list</source>
+                <target>liste d'utilisateur</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>security.user</source>
+                <target>utilisateur</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

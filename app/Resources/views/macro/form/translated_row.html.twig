@@ -1,0 +1,15 @@
+{% macro translated_row(form, field) %}
+    {% if form.translations is not empty %}  
+        {% for translation in form.translations  %}
+            <div class="{{ translation.vars.id }} trans_{{loop.index0}} trans{% if 0 != translation.vars.name  %} hidden{% endif %}"> {{ form_row(translation[field]) }} </div>
+        {% endfor %}
+    {% elseif form.translations.vars.prototype is defined %}  
+        {% set protoform = form_row(form.translations.vars.prototype[field]) %} 
+        {% for key, translation in form.translations.vars.prototype.trans_lang.vars.choices %}
+            <div class="{{ form.translations.vars.prototype.vars.id | replace({"__name_trans__": loop.index0}) }} trans_div{% if 0 != loop.index0  %} hidden{% endif %}"> 
+            {# here create one field for each language #}
+                {{ protoform | replace({"__name_trans__": loop.index0})|raw }}
+            </div>
+        {% endfor %} 
+    {% endif %}
+{% endmacro translated_row %}

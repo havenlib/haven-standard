@@ -1,0 +1,3 @@
+[submodule "vendor/haven"]
+	path = vendor/haven
+	url = git@github.com:havenlib/haven.git

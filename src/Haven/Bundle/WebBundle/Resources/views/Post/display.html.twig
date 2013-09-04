@@ -1,0 +1,70 @@
+<h2>{{"web.post.list" | trans | capitalize}}</h2>
+<table>
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>{{"web.status" | trans | capitalize }}</th>
+            <td>{{ entity.status }}</td>
+        </tr>
+        <tr>
+            <th>{{"web.rank" | trans | capitalize }}</th>
+            <td>
+                {{ entity.rank }}
+            </td>
+        </tr>
+        <tr>
+            <th>{{"web.title" | trans | capitalize }}</th>
+            <td>{{ entity.title }}</td>
+        </tr>
+        <tr>
+            <th>{{"web.subtitle" | trans | capitalize }}</th>
+            <td>{{ entity.subtitle }}</td>
+        </tr>
+        <tr>
+            <th>{{"web.slug" | trans | capitalize }}</th>
+            <td>{{ entity.slug }}</td>
+        </tr>
+        <tr>
+            <th>{{"web.excerpt" | trans | capitalize }}</th>
+            <td>{{ entity.excerpt }}</td>
+        </tr>
+        <tr>
+            <th>{{"web.content" | trans | capitalize }}</th>
+            <td>{{ entity.content }}</td>
+        </tr>
+        <tr>
+            <th>{{"web.categories" | trans | capitalize }}</th>
+            <td>
+                <ul>
+                {% for category in entity.categories %}
+                    <li>
+                        {{ category.name }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>{{"web.created.at" | trans | capitalize }}</th>
+            <td>{{ entity.createdat | date("web.date.format" | trans) }}</td>
+        </tr>
+        <tr>
+            <th>{{"web.updated.at" | trans | capitalize }}</th>
+            <td>{{ entity.updatedat | date("web.date.format" | trans) }}</td>
+        </tr>
+        <tr>
+            <th>{{"web.post.begin.at" | trans | capitalize }}</th>
+            <td>{{ entity.postbeginat | date("web.date.format" | trans) }}</td>
+        </tr>
+        <tr>
+            <th>{{"web.post.end.at" | trans | capitalize }}</th>
+            <td>{{ entity.postendat | date("web.date.format" | trans) }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+

@@ -1,0 +1,37 @@
+haven_personabundle:
+    resource: "@HavenPersonaBundle/Controller"
+    type:     annotation
+    prefix: /{_locale}/
+    requirements:
+      _locale: fr|en
+
+
+#HavenPersonaBundle_Person:
+#    resource: "@HavenPersonaBundle/Controller/PersonController.php"
+#    type:     annotation
+#    prefix: /{_locale}/
+#    defaults:
+#        discriminator: person
+#        admin: admin
+#    requirements:
+#        suffix:  "person|personne"
+#        admin:    "admin"
+#        edit:     "edit|editer"
+#        list:     "list|lister"
+#        show:     "show|afficher"
+#        create:   "create|creer"
+#        
+#HavenPersonaBundle_Company:
+#    resource: "@HavenPersonaBundle/Controller/CompanyController.php"
+#    type:     annotation
+#    prefix: /{_locale}/
+#    defaults:
+#        discriminator: company
+#        admin: admin
+#    requirements:
+#        suffix:  "company|entreprise"
+#        admin:    "admin"
+#        edit:     "edit|editer"
+#        list:     "list|lister"
+#        show:     "show|afficher"
+#        create:   "create|creer"

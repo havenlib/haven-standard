@@ -1,0 +1,5 @@
+<ul>
+{% for language in languages %}
+<li><a href="{{ path('change_language') }}?lang={{ language.symbol }}" > {{ language.getLanguage().getName() }}_{{ language.name }}</a></li>
+{% endfor %}
+</ul>

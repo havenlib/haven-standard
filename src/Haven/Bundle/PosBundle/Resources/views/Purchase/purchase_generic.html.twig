@@ -1,0 +1,14 @@
+    <div>
+        {% if entity is not empty %}
+            <div>{{ entity.memo }}</div>
+            {% for line in entity.getPurchaseProducts %}
+            <div>{{ line.product.name }}</div> 
+            <div>{{ line.price }}</div> 
+            {% else %}
+            no product selected
+            {% endfor %}
+        {% else %}
+            aucune entré
+        {% endif %}
+            
+    </div>

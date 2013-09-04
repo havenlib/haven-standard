@@ -1,0 +1,21 @@
+<tr>
+    <td>{{ entity.name }}</td>
+    <td>{{ entity.mimeType }}</td>
+    <td>
+        <ul>
+            <li>
+                <a href="{{ path('haven_media_file_edit', {'id': entity.id}) }}">edit</a>
+            </li>
+            <li>
+                <form action="{{ path('haven_media_file_delete') }}" method="post">
+                    {{ form_widget(delete_forms[entity.getId()]) }}
+                </form>
+            </li>
+            <li>
+                <form action="{{ path('haven_media_file_download', {'id': entity.id}) }}" method="post">
+                    <button type="submit">download</button>
+                </form>
+            </li>
+        </ul>    
+    </td>
+</tr>

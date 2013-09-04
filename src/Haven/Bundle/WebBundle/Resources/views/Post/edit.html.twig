@@ -1,0 +1,6 @@
+{%  extends "HavenWebBundle:Post:create.html.twig" %}
+{% block formhead %}
+    {{ path('haven_web_post_edit', {'id': entity.id}) }}
+{% endblock formhead %}
+
+

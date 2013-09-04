@@ -1,0 +1,14 @@
+services:
+  user.read_handler:
+      class:     Haven\Bundle\SecurityBundle\Lib\Handler\UserReadHandler
+      arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+      
+  user.persistence_handler:
+      class:     Haven\Bundle\SecurityBundle\Lib\Handler\UserPersistenceHandler
+      arguments: ["@user.read_handler", "@doctrine.orm.entity_manager", "@security.context", "@security.encoder_factory"]
+
+  user.form_handler:
+      class:     Haven\Bundle\SecurityBundle\Lib\Handler\UserFormHandler
+      arguments: ["@user.read_handler", "@security.context", "@form.factory"]
+
+    

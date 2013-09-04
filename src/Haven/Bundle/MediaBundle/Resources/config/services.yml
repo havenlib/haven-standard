@@ -1,0 +1,24 @@
+services:
+  haven_media.file.read_handler:
+      class:     Haven\Bundle\MediaBundle\Lib\Handler\FileReadHandler
+      arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+      
+  haven_media.file.persistence_handler:
+      class:     Haven\Bundle\MediaBundle\Lib\Handler\FilePersistenceHandler
+      arguments: ["@haven_media.file.read_handler", "@doctrine.orm.entity_manager", "@security.context", "@haven_media.file.manipulator"]
+
+  haven_media.file.form_handler:
+      class:     Haven\Bundle\MediaBundle\Lib\Handler\FileFormHandler
+      arguments: ["@haven_media.file.read_handler", "@security.context", "@form.factory"]
+
+  haven_media.file.manipulator:
+      class:     Haven\Bundle\MediaBundle\Lib\Manipulator\FileManipulator
+      arguments:    [%kernel.root_dir%, %secure_upload_dir%]
+    
+  haven_media.image_file.form_handler:
+      class:     Haven\Bundle\MediaBundle\Lib\Handler\ImageFileFormHandler
+      arguments: ["@haven_media.file.read_handler", "@security.context", "@form.factory"]
+      
+  haven_media.image_file.manipulator:
+      class:     Haven\Bundle\MediaBundle\Lib\Manipulator\ImageFileManipulator
+      arguments:    [%kernel.root_dir%, %secure_upload_dir%]

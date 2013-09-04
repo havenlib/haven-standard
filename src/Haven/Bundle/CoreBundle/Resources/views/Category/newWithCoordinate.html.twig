@@ -1,0 +1,47 @@
+{%  extends "HavenCoreBundle:Template:add_template.html.twig" %}
+{% block formhead %}
+    {{ path('haven_core_category_newwithcoordinate') }}
+{% endblock formhead %}
+
+{% block form %}
+<fieldset>
+    <ul>
+        <li>{{ form_label(edit_form.firstname)}}
+            {{ form_errors(edit_form.firstname)}}
+                <span>{{ form_widget(edit_form.firstname)}}</span>
+            </li>
+            <li>{{ form_label(edit_form.lastname)}}
+            {{ form_errors(edit_form.lastname)}}
+                    <span>{{ form_widget(edit_form.lastname)}}</span>
+                </li>
+                <li>{{ form_label(edit_form.sex)}}
+            {{ form_errors(edit_form.sex)}}
+                        <span>{{ form_widget(edit_form.sex)}}</span>
+                    </li>
+                    <li>
+                        {{ form_row(edit_form.telephone) }}
+                    <li>
+                        {{ form_row(edit_form.web) }}
+                    </li>
+                    <li>
+                        {{ form_row(edit_form.postal) }}
+                    </li>
+                    <li>
+                        {{ form_row(edit_form.map) }}
+                    </li>
+                    <li>
+                        {{ form_row(edit_form.time) }}
+                    </li>
+                        {{ form_rest(edit_form) }}
+                    </ul>
+                </fieldset>
+                <input type=button value="add address" onclick="javascript:addAnItem('haven_bundle_personabundle_persontype_postal')" />
+                <input type=button value="add map" onclick="javascript:addAnItem('haven_bundle_personabundle_persontype_map')" />
+                <input type=button value="add web" onclick="javascript:addAnItem('haven_bundle_personabundle_persontype_web')" />
+                <input type=button value="add telephone" onclick="javascript:addAnItem('haven_bundle_personabundle_persontype_telephone')" />
+                <input type=button value="add time" onclick="javascript:addAnItem('haven_bundle_personabundle_persontype_time')" />
+{% endblock form %}
+
+{% block back %}
+
+{% endblock back %}

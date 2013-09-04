@@ -1,0 +1,55 @@
+{% extends "OwnerSiteBundle:Templates:multilangue_add_template.html.twig" %}
+{% import "::macro/route/crud.html.twig" as _route_crud %}
+{% import "::macro/form/translated_row.html.twig" as form %}
+{% block formhead %}
+    {{ _route_crud.path('haven_cms_page_create', 'create') }}
+{% endblock formhead %}
+
+{% block form %}
+<fieldset>
+    <ul>
+        {% for key, translation in edit_form.translations %}
+        <li class="tab-element tab{{ translation.vars.value.getTransLang.id }}" {% if loop.index != 1 %}style="display:none;"{% endif %}>
+            {{ form_errors(translation.name) }}
+            {{ form_label(translation.name) }}
+            {{ form_widget(translation.name)}}
+        </li>
+        {% endfor %}
+        <li>
+            {% if edit_form.htmlcontents.vars.prototype is defined %} 
+                <div>
+                    {# sets the tes#}
+                    {% if edit_form.htmlcontents is not empty %}
+                        {% set target = edit_form.htmlcontents %}
+                    {% else %}
+                        {% set target = edit_form.htmlcontents.vars.prototype %}
+                    {% endif %}
+                        {{ form_row(target.name) }}
+                        
+                     
+                    {#{ form.translated_row(target, "name") }#}
+                    {#{ form_row(target.name) }#}
+         
+                
+                --------
+                {#<ul class="nav nav-tabs">
+                {% for key, translation in form.translations.vars.prototype.trans_lang.get("choices") %}
+                <li class="{% if loop.index == 1 %} active{% endif%}" rel="{{ id ~"_translations_"~ loop.index0 }}" onclick="showFormElementClass(this);return false"><a href="#" onclick="return false" data-toggle="tab">{{ translation.label }}</a></li>
+                {% endfor %} 
+                </ul>#}
+            {% else %}
+                {#{ form_row(edit_form.htmlcontents) }#}
+            {% endif %}
+        {#% endfor %#}
+        </li>
+        {{ form_rest(edit_form) }}
+    </ul>
+</fieldset>
+<input type=button value="add html content" onclick="javascript:addAnItem('haven_bundle_cmsbundle_pagetype_htmlcontents')" />
+{% endblock form %}
+
+{% block back %}
+    <a href="{{ _route_crud.path('haven_cms_page_list', 'list') }}">
+        Back to the list
+    </a>
+{% endblock back %}

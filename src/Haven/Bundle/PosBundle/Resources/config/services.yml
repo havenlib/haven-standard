@@ -1,0 +1,13 @@
+services:
+  haven_pos.product.persistence_handler:
+      class:     Haven\Bundle\PosBundle\Lib\Handler\ProductPersistenceHandler
+      arguments: ["@haven_pos.product.read_handler", "@doctrine.orm.entity_manager", "@security.context"]
+      
+  haven_pos.product.read_handler:
+      class:     Haven\Bundle\PosBundle\Lib\Handler\ProductReadHandler
+      arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+
+  haven_pos.product.form_handler:
+      class:     Haven\Bundle\PosBundle\Lib\Handler\ProductFormHandler
+      arguments: ["@haven_pos.product.read_handler", "@security.context", "@form.factory"]
+    

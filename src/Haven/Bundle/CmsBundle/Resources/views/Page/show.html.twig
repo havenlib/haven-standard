@@ -1,0 +1,37 @@
+{%  extends "::base.html.twig" %}
+{% import "::macro/route/crud.html.twig" as _route_crud %}
+{% block inside_theater %}
+<h2>Afficher la page</h2>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.getId() }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ entity.getName() }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ _route_crud.path('haven_cms_page_list', 'list') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ _route_crud.path('haven_cms_page_edit', 'edit',entity.id) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        {#<form action="{{ path('HavenPersonaBundle_PersonDelete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>#}
+    </li>
+</ul>
+{% endblock inside_theater %}

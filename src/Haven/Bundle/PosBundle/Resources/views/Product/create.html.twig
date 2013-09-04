@@ -1,0 +1,22 @@
+{% extends "HavenPosBundle:Product:form/add_template.html.twig" %}
+
+{% block formhead %}
+    {{ path('haven_pos_product_create') }}
+{% endblock formhead %}
+
+{% block save_button %}
+    {{ form_widget(edit_form.save) }}
+{% endblock save_button %}
+
+{% block fields %}
+<fieldset>
+    {{ form_rest(edit_form) }}
+</fieldset>
+{% endblock fields %}
+
+
+{% block back %}
+<a href="{{ path('haven_pos_product_list') }}">
+    {{"web.back.to.the.list" | trans | capitalize }}
+</a>
+{% endblock back %}

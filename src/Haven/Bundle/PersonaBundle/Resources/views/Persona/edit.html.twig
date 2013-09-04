@@ -1,0 +1,24 @@
+{% extends "HavenPersonaBundle:Persona:form/add_template.html.twig" %}
+
+{% block formhead %}
+    {{ path('haven_persona_persona_edit', {"id": entity.id}) }}
+{% endblock formhead %}
+
+{% block save_button %}
+    {#{ form_widget(edit_form.save) }#}
+{% endblock save_button %}
+
+{% block fields %}
+<fieldset>
+    {{ form_rest(edit_form) }}
+</fieldset>
+{% endblock fields %}
+{% block delete %}
+<li>
+   {# <form action="{{ path('HavenFaqBundle_FaqDelete', { 'id': entity.id }) }}" method="post">
+        {{ form_widget(delete_form) }}
+        <button type="submit">Delete</button>
+    </form>#}
+</li>
+{% endblock delete %}
+

@@ -1,0 +1,30 @@
+<h2>{{"web.faq.list" | trans}}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>{{"web.status" | trans | capitalize }}</th>
+            <th>{{"web.rank" | trans | capitalize }}</th>
+            <th>{{"web.question" | trans | capitalize }}</th>
+            <th>{{"web.response" | trans | capitalize }}</th>
+        </tr>
+    </thead>
+    <tbody class="sortable">
+        {% for entity in entities %}
+        <tr>
+            <td>{{ entity.id }}</td>
+            <td>{{ entity.status }}</td>
+            <td>{{ entity.rank }}</td>
+            <td>{{ entity.question }}</td>
+            <td>{{ entity.response }}</td>
+        </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">
+                    {{ "web.no.entities" |trans }}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

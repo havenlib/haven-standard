@@ -1,0 +1,23 @@
+{% extends "HavenWebBundle:Post:form/multilangue_add_template.html.twig" %}
+
+{% block formhead %}
+    {{ path('haven_web_post_create') }}
+{% endblock formhead %}
+{% form_theme edit_form.translations "::Form/translations.html.twig" %}
+
+{% block save_button %}
+    {{ form_widget(edit_form.save) }}
+{% endblock save_button %}
+
+{% block fields %}
+<fieldset>
+    {{ form_rest(edit_form) }}
+</fieldset>
+{% endblock fields %}
+
+
+{% block back %}
+<a href="{{ path('haven_web_post_list') }}">
+    {{"web.back.to.the.list" | trans | capitalize }}
+</a>
+{% endblock back %}

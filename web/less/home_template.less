@@ -1,0 +1,36 @@
+
+header, #theater, footer{
+    min-width: 590px;
+    max-width: 1400px;
+    //width: 1224px;
+    margin: 0 auto;
+}
+header{
+    background-color: #66c0de;
+}
+footer{
+    background-color: green;
+}
+#theater{
+    overflow: auto;
+    > div{
+            input{width: 100%;}
+        &#aside-left-area{
+            width: 15%;
+            background-color: red;
+        }
+        &#center-area{
+            width: 70%;
+            background-color: orange;
+        }
+        &#aside-right-area{
+            width: 15%;
+            background-color: yellow;
+            height: 200px;
+        }
+        &#bottom-area{
+            width: 15%;
+            background-color: grey;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+haven_securitybundle:
+    resource: "@HavenSecurityBundle/Controller"
+    type:     annotation
+    prefix: /{_locale}/
+    requirements:
+      _locale: fr|en
+      
+#HavenSecurityBundle_Login:
+#    resource: "@HavenSecurityBundle/Controller/LoginController.php"
+#    type:     annotation
+#
+#HavenSecurityBundle_User:
+#    resource: "@HavenSecurityBundle/Controller/UserController.php"
+#    type:     annotation
+#    prefix: /{_locale}/
+#    defaults:
+#      admin: admin
+#    requirements: 
+#      _locale: fr|en
+#      admin: "admin"
+#      user: "user|utilisateur"
+#      create: "create|creer"
+#      edit: "edit|editer"
+#      list: "list|lister"
+#      show: "show|afficher"

@@ -1,0 +1,16 @@
+haven_posbundle:
+    resource: "@HavenPosBundle/Controller"
+    type:     annotation
+    prefix: /{_locale}/
+    requirements:
+      _locale: fr|en
+
+
+#HavenPosBundle_Post:
+#    resource: "@HavenPosBundle/Controller/PostController.php"
+#    type:     annotation
+#    prefix: /{_locale}/
+#    defaults:
+#      admin: admin
+#    requirements:
+#      _locale: fr|en

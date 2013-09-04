@@ -1,0 +1,25 @@
+{% extends "HavenMediaBundle:File:form/add_template.html.twig" %}
+
+{% form_theme edit_form.files "::Form/file_upload.html.twig" %}
+{% form_theme edit_form.uploads "::macro/form/multiple_file.html.twig" %}
+
+{% block formhead %}
+    {{ path('haven_media_file_create') }}
+{% endblock formhead %}
+
+{% block save_button %}
+    {{ form_widget(edit_form.upload) }}
+{% endblock save_button %}
+
+{% block fields %}
+<fieldset>
+    {{ form_rest(edit_form) }}
+</fieldset>
+{% endblock fields %}
+
+
+{% block back %}
+               {# <a href="{{ _route_crud.path('haven_media_faq_list', 'list') }}">
+                    Back to the list
+                </a>#}
+{% endblock back %}

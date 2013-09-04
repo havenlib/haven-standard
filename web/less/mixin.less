@@ -1,0 +1,34 @@
+/** Mixins **/
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+.cool-corners(){
+   // height: 3em;
+   // width: 12em;
+    -moz-border-radius: 1em 4em 1em 4em;
+    border-radius: 1em 4em 1em 4em;
+}
+
+.rounded-top (@radius: 5px) {
+    -webkit-border-radius: @radius @radius 0 0;
+    -moz-border-radius: @radius @radius 0 0;
+    border-radius: @radius @radius 0 0;
+}
+
+.inner-shadow(@r, @g, @b, @scope){
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(@r, @g, @b, @scope);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(@r, @g, @b, @scope);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(@r, @g, @b, @scope);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(@r, @g, @b, @scope);
+}
+
+.effect(@property: all, @duration : .2s, @timing: ease-in-out){
+	-webkit-transition: @property @duration @timing;
+	-moz-transition: @property @duration @timing;
+	-o-transition: @property @duration @timing;
+	transition: @property @duration @timing;
+}

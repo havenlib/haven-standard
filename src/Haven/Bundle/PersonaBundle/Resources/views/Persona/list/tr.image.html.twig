@@ -1,0 +1,31 @@
+<tr>
+    <td>
+        <img width="{{entity.width / 3 }}" height="{{ entity.height / 3 }}" alt="{{ entity.alt }}" src="{{path("haven_persona_imagepersona_show", {"id": entity.id})}}" />
+        <br />
+        {{ entity.name }}
+    </td>
+    <td>{{ entity.mimeType }}</td>
+    <td>
+        <ul>
+            <li>
+                <a href="{{ path('haven_persona_imagepersona_resize', {'id': entity.id}) }}">resize</a>
+            </li>
+            <li>
+                <a href="{{ path('haven_persona_imagepersona_crop', {'id': entity.id}) }}">crop</a>
+            </li>
+            <li>
+                <a href="{{ path('haven_persona_persona_edit', {'id': entity.id}) }}">edit</a>
+            </li>
+            <li>
+                <form action="{{ path('haven_persona_persona_delete') }}" method="post">
+                    {{ form_widget(delete_forms[entity.getId()]) }}
+                </form>
+            </li>
+            <li>
+                <form action="{{ path('haven_persona_persona_download', {'id': entity.id}) }}" method="post">
+                    <button type="submit">download</button>
+                </form>
+            </li>
+        </ul>    
+    </td>
+</tr>

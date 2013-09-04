@@ -1,0 +1,31 @@
+{% macro create(route) %}
+    {% import _self as crud %}
+    {{ crud.path(route, 'create') }}
+{% endmacro %}
+
+{% macro edit(route, id) %}
+    {% import _self as crud %}
+    {{ crud.path(route, 'edit', {"id" : id}) }}
+{% endmacro %}
+
+{% macro show(route, id) %}
+    {% import _self as crud %}
+    {{ crud.path(route, 'show', {"id" : id}) }}
+{% endmacro %}
+
+{% macro list(route, id) %}
+    {% import _self as crud %}
+    {{ crud.path(route, 'list', {"id" : id}) }}
+{% endmacro %}
+
+{% macro delete(route) %}
+    {% import _self as crud %}
+    {{ crud.path(route, 'delete') }}
+{% endmacro %}
+
+{% macro path(route, keyword, options = {} ) %}
+{% spaceless %}
+    {% set parameters = {(keyword): (keyword | trans({}, 'routes'))}| merge(options is iterable ? options:{}) %}
+    {{ path(route, parameters)}}
+{% endspaceless %}
+{% endmacro %}

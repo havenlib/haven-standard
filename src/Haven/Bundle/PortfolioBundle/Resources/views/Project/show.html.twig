@@ -1,0 +1,42 @@
+<h2>{{"portfolio.post" | trans | capitalize}}</h2>
+<table>
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>{{"portfolio.status" | trans | capitalize }}</th>
+            <td>{{ entity.status }}</td>
+        </tr>
+        <tr>
+            <th>{{"portfolio.name" | trans | capitalize }}</th>
+            <td>
+                {{ entity.name }}
+            </td>
+        </tr>
+        <tr>
+            <th>{{"portfolio.description" | trans | capitalize }}</th>
+            <td>{{ entity.description }}</td>
+        </tr>
+        <tr>
+            <th>{{"portfolio.date" | trans | capitalize }}</th>
+            <td>{{ entity.date | date("portfolio.date.format" | trans) }}</td>
+        </tr>
+        <tr>
+            <th>{{"portfolio.author" | trans | capitalize }}</th>
+            <td>{{ entity.author }}</td>
+        </tr>
+        <tr>
+            <th>{{"portfolio.createdat" | trans | capitalize }}</th>
+            <td>{{ entity.createdat | date("portfolio.date.format" | trans) }}</td>
+        </tr>
+        <tr>
+            <th>{{"portfolio.updatedat" | trans | capitalize }}</th>
+            <td>{{ entity.updatedat | date("portfolio.date.format" | trans) }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+

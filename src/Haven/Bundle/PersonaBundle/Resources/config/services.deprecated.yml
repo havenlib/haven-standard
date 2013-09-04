@@ -1,0 +1,39 @@
+#services:
+#  company.read_handler:
+#        class:     Haven\Bundle\PersonaBundle\Lib\CompanyReadHandler
+#        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+#        
+#  company.form_handler:
+#      class:     Haven\Bundle\PersonaBundle\Lib\CompanyFormHandler
+#      arguments: ["@company.read_handler", "@security.context", "@form.factory"]
+#      
+#  company.persistence_handler:
+#        class:     Haven\Bundle\PersonaBundle\Lib\CompanyPersistenceHandler
+#        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+#        
+#  person.read_handler:
+#        class:     Haven\Bundle\PersonaBundle\Lib\PersonReadHandler
+#        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+#        
+#  person.form_handler:
+#      class:     Haven\Bundle\PersonaBundle\Lib\PersonFormHandler
+#      arguments: ["@person.read_handler", "@security.context", "@form.factory"]
+#      
+#  person.persistence_handler:
+#        class:     Haven\Bundle\PersonaBundle\Lib\PersonPersistenceHandler
+#        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+      
+#  persona.read_handler:
+#        class:     Haven\Bundle\PersonaBundle\Lib\PersonaReadHandler
+#        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+#        
+#  persona.persistence_handler:
+#        class:     Haven\Bundle\PersonaBundle\Lib\PersonaPersistenceHandler
+#        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+#        
+#  persona.form_handler:
+#      class:     Haven\Bundle\PersonaBundle\Lib\PersonaFormHandler
+#      arguments: ["@persona.read_handler", "@security.context", "@form.factory"]
+      
+      
+      

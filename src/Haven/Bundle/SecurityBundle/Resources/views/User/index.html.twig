@@ -1,0 +1,39 @@
+<h2>{{"security.user.list" | trans}}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>{{"security.locked" | trans | capitalize }}</th>
+            <th>{{"security.status" | trans | capitalize }}</th>
+            <th>{{"security.username" | trans | capitalize }}</th>
+            <th>{{"security.email" | trans | capitalize }}</th>
+            <th>{{"security.password" | trans | capitalize }}</th>
+            <th>{{"security.salt" | trans | capitalize }}</th>
+            <th>{{"security.created.at" | trans | capitalize }}</th>
+            <th>{{"security.created.by" | trans | capitalize }}</th>
+        </tr>
+    </thead>
+    <tbody class="sortable">
+        {% for entity in entities %}
+        <tr>
+            <td>{{ entity.id }}</td>
+            <td>{{ entity.locked }}</td>
+            <td>{{ entity.status }}</td>
+            <td>{{ entity.username }}</td>
+            <td>{{ entity.email }}</td>
+            <td>xxxxxxxxx</td>
+            <td>{{ entity.salt }}</td>
+            <td>{{ entity.createdat | date("security.date.format" | trans) }}</td>
+            <td>{{ entity.createdby }}</td>
+        </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">
+                    {{ "security.no.entities" |trans }}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+

@@ -1,0 +1,28 @@
+<h2>{{"persona.list" | trans}}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mime type</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="sortable">
+    {% for entity in entities %}
+        {% include ['HavenPersonaBundle:Persona:list/tr.' ~ entity.type ~ '.html.twig', 'HavenPersonaBundle:Persona:list/tr.default.html.twig'] %}
+    {% else %}
+        <tr>
+            <td>
+                aucune entré
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<ul>
+    <li>
+        <a href="{{ path('haven_persona_persona_create') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>

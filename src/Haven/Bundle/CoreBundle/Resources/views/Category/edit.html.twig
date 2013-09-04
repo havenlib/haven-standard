@@ -1,0 +1,13 @@
+{%  extends "HavenCoreBundle:Category:create.html.twig" %}
+{% import "::macro/route/suffix.html.twig" as route_suffix %}
+{% block formhead %}
+    {{ route_suffix.edit('haven_core_category_edit', 'category', entity.id) }}
+{% endblock formhead %}
+{% block delete %}
+<li>
+   {# <form action="{{ path('HavenPersonaBundle_PersonDelete', { 'id': entity.id }) }}" method="post">
+        {{ form_widget(delete_form) }}
+        <button type="submit">Delete</button>
+    </form>#}
+</li>
+{% endblock delete %}

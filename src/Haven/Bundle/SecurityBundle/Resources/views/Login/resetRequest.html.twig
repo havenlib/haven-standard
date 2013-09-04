@@ -1,0 +1,28 @@
+<form action="{{ path("HavenSecurityBundle_resetRequest") }}" method="post" id="login">
+{% include("HavenSecurityBundle:Login:resetRequestAjax.html.twig") %}
+{% if form_errors(reset_form) is not empty %}
+<div class="alert alert-error">
+    {{ form_errors(reset_form) }}
+</div>
+{% endif %}
+{% if error is not empty %}
+<div class="alert alert-error">
+    {{ error }}
+</div>
+{% endif %}
+{% if success is not empty %}
+<div class="alert alert-success">
+    {{ success }}
+</div>
+{% endif %}
+<div>
+    <div>
+        <label>{{ "mon.courriel"|trans|capitalize }}</label>
+    </div>
+    <span>
+        {{ form_widget(reset_form.email) }}
+    </span>
+</div>
+{{ form_widget(reset_form._token) }}
+    <input type=submit value="go">
+</form>

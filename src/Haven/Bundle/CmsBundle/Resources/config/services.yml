@@ -1,0 +1,48 @@
+services:
+  page.read_handler:
+        class:     Haven\Bundle\CmsBundle\Lib\PageReadHandler
+        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+        
+  page.persistence_handler:
+        class:     Haven\Bundle\CmsBundle\Lib\PagePersistenceHandler
+        arguments: ["@page.read_handler", "@doctrine.orm.entity_manager", "@security.context"]
+
+  page.form_handler:
+      class:     Haven\Bundle\CmsBundle\Lib\PageFormHandler
+      arguments: ["@page.read_handler", "@haven_core.language.read_handler", "@security.context", "@form.factory"]
+      
+  page_content.read_handler:
+        class:     Haven\Bundle\CmsBundle\Lib\PageContentReadHandler
+        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+        
+  page_content.persistence_handler:
+        class:     Haven\Bundle\CmsBundle\Lib\PageContentPersistenceHandler
+        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+
+  page_content.form_handler:
+      class:     Haven\Bundle\CmsBundle\Lib\PageContentFormHandler
+      arguments: ["@page_content.read_handler", "@haven_core.language.read_handler", "@security.context", "@form.factory"]
+      
+  template.read_handler:
+        class:     Haven\Bundle\CmsBundle\Lib\TemplateReadHandler
+        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+        
+  template.persistence_handler:
+        class:     Haven\Bundle\CmsBundle\Lib\TemplatePersistenceHandler
+        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+
+  template.form_handler:
+      class:     Haven\Bundle\CmsBundle\Lib\TemplateFormHandler
+      arguments: ["@template.read_handler", "@haven_core.language.read_handler", "@security.context", "@form.factory"]
+      
+  menu.read_handler:
+        class:     Haven\Bundle\CmsBundle\Lib\MenuReadHandler
+        arguments: ["@doctrine.orm.entity_manager", "@security.context", "@nested_set_manager"]
+        
+  menu.persistence_handler:
+        class:     Haven\Bundle\CmsBundle\Lib\MenuPersistenceHandler
+        arguments: ["@menu.read_handler","@doctrine.orm.entity_manager", "@security.context", "@nested_set_manager"]
+
+  menu.form_handler:
+      class:     Haven\Bundle\CmsBundle\Lib\MenuFormHandler
+      arguments: ["@menu.read_handler", "@haven_core.language.read_handler", "@security.context", "@form.factory", "@nested_set_manager"]

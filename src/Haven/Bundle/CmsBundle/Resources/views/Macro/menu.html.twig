@@ -1,0 +1,49 @@
+{% macro list_children(entity) %}
+    {% import _self as menu %}
+{% import "::macro/route/crud.html.twig" as _route_crud %}
+            {% for child in entity.getChildren() %}
+
+<li> <a href="{{ (child.node.type=="internal")?child.node.FullSlug is not empty?path("owner_site_menu_showmenulink", {"slug" : child.node.FullSlug}):"" :child.node.link.url}}">{{ child.node.name }}</a>
+    <ul class='links'>
+        <li>
+            <a href="{{ _route_crud.edit('owner_site_menu_edit',  child.id) }}">edit</a> 
+        </li>
+            {% if child.node.type == 'internal' %}
+        <li>
+            <a href="{{ _route_crud.path('owner_site_menu_create', "create", {"parent": child.id, 'type': "external"}) }}" method="post">
+                ajouter un lien externe
+            </a>
+        </li>
+        <li>
+            <a href="{{ _route_crud.path('owner_site_menu_create', "create", {"parent": child.id, 'type': "internal"}) }}" method="post">
+                ajouter des liens interne
+            </a>
+        </li>
+            {% endif %}
+    </ul>
+                {% if(child.hasChildren) %}
+    <ul>
+                    {{ menu.list_children(child) }}
+        </ul>
+                {% endif %}
+    </li>
+            {% endfor %}
+{% endmacro %}
+
+{% macro show_menu(entity, depth = null, current_menu_id) %}
+    {% import _self as menu %}
+{% if (depth > 0 or depth is null) and entity is not null %}
+{% import "::macro/route/crud.html.twig" as _route_crud %}
+            {% for child in entity.getChildren() %}
+
+    <li {% if child.node.id == current_menu_id or child.isAncestorOfNodeId(current_menu_id) %}class="active"{% endif %}> <a href="{{ (child.node.type=="internal")?child.node.FullSlug is not empty?path("owner_site_menu_showmenulink", {"slug" : child.node.FullSlug}):"" :child.node.link.url}}">{{ child.node.name }}</a>
+                {% if(child.hasChildren) %}
+            <ul>
+                    {{ menu.show_menu(child, depth is null?null:depth - 1, current_menu_id) }}
+                </ul>
+                {% endif %}
+            </li>
+            {% endfor %}
+                {% endif %}
+
+{% endmacro %}

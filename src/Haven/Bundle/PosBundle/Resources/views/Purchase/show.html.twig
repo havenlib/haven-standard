@@ -1,0 +1,20 @@
+{%  extends "::base.html.twig" %}
+{% block theatre %}
+    <ul>
+        <li>
+            {% include("HavenPosBundle:Purchase:purchase_generic.html.twig") with { "entity" : entity } %}
+        </li>
+    </ul>
+<ul>
+    <li>
+        <a href="{{ path('HavenPosBundle_PurchaseEdit', { 'id': entity.id }) }}">
+            edit purchase
+        </a>
+        </li>
+        <li>
+        <a href="{{ path('HavenPosBundle_PurchaseShow', { 'id': entity.id }) }}">
+            show purchase
+        </a>
+    </li>
+</ul>
+{% endblock theatre %}

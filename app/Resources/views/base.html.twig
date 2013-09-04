@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js oldies" lang="en"> <![endif]--> 
+<!--[if IE 7]>    <html class="no-js ie7 oldies" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldies" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]--> 
+    <html>
+        <head>
+            <meta charset="UTF-8" />
+            {% block meta_title %}<title>{% block inside_meta_title %}{% endblock inside_meta_title %}</title>{% endblock meta_title %}
+
+            <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+        {% block stylesheets %}
+            <script src="/js/libs/modernizr.js"></script>
+            {% if app.environment != 'prod' %}
+            <!-- Switch environnement développement développement:  -->
+            <script type="text/javascript"> less = {env: 'development'};</script>
+            <link href="{{ asset("less/base.less") }}" rel="stylesheet/less" type="text/css" />
+                        <!--    <link rel="stylesheet" type="text/css" href="{{ asset("css/bootstrap-responsive.min.css") }}" /> >
+                            <link rel="stylesheet" type="text/css" href="{{ asset("css/bootstrap.min.css") }}" /-->
+            <!-- JS -->
+            <!-- CSS -->
+            {% else %}
+            <link rel="stylesheet" type="text/css" href="/css/base.css" />
+                            <!-- link rel="stylesheet" type="text/css" href="{{ asset("css/bootstrap-responsive.min.css") }}" />
+                            <link rel="stylesheet" type="text/css" href="{{ asset("css/bootstrap.min.css") }}" / -->
+            {% endif %}
+        {% endblock stylesheets %}                                                                                                     
+
+            <link rel="shortcut icon" href="{{ asset('favicon.ico') }}"  type="image/x-icon"  />
+        </head>
+    {% block body %}
+        <body>
+        {% block inside_body %}
+
+        {% set flashs = ['notice', 'error', 'success', 'info'] %}
+        {% for  flash in flashs %}
+            {% for  message in app.session.flashBag.get(flash) %}
+                <div class="notice"> {{ message }}</div>
+            {% endfor %}
+        {% endfor %}
+
+
+        {% block main %}
+        {% spaceless %}
+                <div id="main">
+
+        {% block header %}
+                    <header>
+            {% block inside_header %}
+                            <img id="logo" src="{{ asset("images/Haven.png") }}" />
+                        {% include "OwnerSiteBundle::navigation.html.twig" %}
+            {% endblock inside_header %}
+                        </header>
+        {% endblock header %}              
+            {% block inside_main %}
+                    {#% block content %}
+                    <div class="content">
+                        {% block inside_main %}
+                        {% endblock inside_main %}
+                    </div>
+                    {% endblock content %#}
+            {% endblock inside_main %}
+        {% block footer %}
+                        <footer>
+        {% block inside_footer %}
+                                <p>Suivez-nous sur <a href="http://twitter.com/evocat1o">Twitter</a>, <a href="http://facebook.com/haven">Facebook</a>, et <a href="https://github.com/haven/">GitHub</a></p>
+                                <p>Haven est fier membre des conseils d'administration de l'<a href="http://apell-quebec.ca" title="Association professionnelle des Entreprises en Logiciels Libres">APELL Québec</a>, et de <a href="http://w3qc.org" title="W3Québec, Promotion des standards ouverts et bonnes pratiques du Web">W3Québec</a></p>
+                                <p>Tout droits réservés © 2010-2012 Haven Solutions Technologiques Inc.</p>
+        {% endblock inside_footer %}
+                            </footer>
+        {% endblock footer %}
+                        </div>
+        {% endspaceless %}
+        {% endblock main %}
+
+        {% block javascripts %}
+                {% if app.environment != 'prod' %}
+
+
+                        <script src="http://files.keyes.ie/baseliner-latest.min.js">
+                        </script>
+                        <script>
+                            window.onload = function() {
+                                baseliner = new Baseliner(12);
+                            }
+                            </script>
+
+
+                {% endif %}
+                            <!-- JS  jquery 2.0 ne support pas ie8 et moins donc reste avec 1.10  -->                        
+                            <script src="{{ asset("js/less-1.3.0.min.js") }}" type="text/javascript"></script>
+                            <script src="{{ asset("js/jquery.min.js") }}" type="text/javascript"></script>
+                            <script src="{{ asset("js/jquery-ui-1.10.3.custom.min.js") }}"></script>
+                                            <!-- script src="{{ asset("js/jquery-ui-1.10.3.custom.min.js") }}"></script -->
+                                            <!-- script src="{{ asset("js/bootstrap.min.js") }}" type="text/javascript"></script -->
+                            <script src="{{ asset("js/ckeditor/ckeditor.js") }}" type="text/javascript"></script>
+        {% endblock javascripts %}
+    {% endblock inside_body %}
+                        </body>
+    {% endblock body %}
+                    </html>

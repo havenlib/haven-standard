@@ -1,0 +1,6 @@
+haven_mediabundle:
+    resource: "@HavenMediaBundle/Controller"
+    type:     annotation
+    prefix: /{_locale}/
+    requirements:
+      _locale: fr|en

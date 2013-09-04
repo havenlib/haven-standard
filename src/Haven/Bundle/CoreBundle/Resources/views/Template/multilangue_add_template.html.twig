@@ -1,0 +1,43 @@
+{%  extends "::base.html.twig" %}
+{% block inside_theater %}
+<div class="edit-form">
+<h1>Ajouter/Modifier une entite</h1>
+    {% if edit_form.translations.vars.prototype is defined %}  
+    <div class="nav nav-tabs lang">{# ajouter le lang comme class pour que le javascript puisse cliqué dessus lors de l'ajout d'items addAnItem, #}
+        {% set vars = edit_form.translations.vars.prototype.0.trans_lang.vars %}
+        {% for key, translation in vars["choices"] %}
+            <li class="{% if loop.index == 1 %} active{% endif%}" data-formname="{{ edit_form.vars.id }}" data-langindex="{{ loop.index0 }}" onclick="showFormElementClass(this);return false"><a href="#" onclick="return false" data-toggle="tab">{{ translation.label }}</a></li>
+        {% endfor %}
+    </div>
+    {% else %}
+        na pas
+    {% endif %}
+    {{ form_errors(edit_form)}}
+    <form action="{% block formhead %}{% endblock formhead %}" method="post" {{ form_enctype(edit_form) }} >
+    {% block form %} {% endblock form %}
+            <div>
+                <div>
+                    <button type="submit" class="btn">Ok</button>
+                </div>
+            </div>
+        </form>
+    <ul>
+        <li>
+        {% block back %}
+        {% endblock back %}
+        </li>
+    {% block delete %}
+    {% endblock delete %}
+    </ul>
+</div>
+{% endblock inside_theater %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/js/sig.js" type="text/javascript"></script>
+{% endblock javascripts %}
+
+{# 
+so far takes a form block, delete block and, formhead block
+should add a title and h1 block
+#}

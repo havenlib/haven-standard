@@ -1,0 +1,8 @@
+            <pre>
+            {{ dump(prototype.trans_lang.vars| keys) }}
+            </pre>
+{% for item in (prototype.trans_lang.vars| keys) %}
+            <p>
+                {{ item }}  : {{ dump(prototype.trans_lang.vars[item]) }} <--
+            <p>
+                {% endfor %}

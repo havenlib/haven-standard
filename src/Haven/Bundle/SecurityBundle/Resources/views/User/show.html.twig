@@ -1,0 +1,42 @@
+<h2>{{"security.user" | trans | capitalize}}</h2>
+<table>
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>{{"security.locked" | trans | capitalize }}</th>
+            <td>{{ entity.locked }}</td>
+        </tr>
+        <tr>
+            <th>{{"security.status" | trans | capitalize }}</th>
+            <td>{{ entity.status }}</td>
+        </tr>
+        <tr>
+            <th>{{"security.username" | trans | capitalize }}</th>
+            <td>{{ entity.username }}</td>
+        </tr>
+        <tr>
+            <th>{{"security.email" | trans | capitalize }}</th>
+            <td>{{ entity.email }}</td>
+        </tr>
+        <tr>
+            <th>{{"security.password" | trans | capitalize }}</th>
+            <td>xxxxxxxxx</td>
+        </tr>
+        <tr>
+            <th>{{"security.salt" | trans | capitalize }}</th>
+            <td>{{ entity.salt }}</td>
+        </tr>
+        <tr>
+            <th>{{"security.created.at" | trans | capitalize }}</th>
+            <td>{{ entity.createdat | date("security.date.format" | trans) }}</td>
+        </tr>
+        <tr>
+            <th>{{"security.created.by" | trans | capitalize }}</th>
+            <td>{{ entity.createdby }}</td>
+        </tr>
+        </tr>
+    </tbody>
+</table>

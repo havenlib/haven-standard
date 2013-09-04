@@ -1,0 +1,23 @@
+{%  extends "::base.html.twig" %}
+{% import "::macro/route/crud.html.twig" as _route_crud %}
+{% block inside_theater %}
+<h2>Liste des pages</h2>
+    <dl>
+        {% for entity in entities %}
+            <div>
+                <div> {{ entity.name }}</div> 
+                <a href="{{ _route_crud.path('haven_cms_page_edit', 'edit',entity.id) }}">edit</a> 
+                <a href="{{ _route_crud.path('haven_cms_page_show', 'show',entity.id) }}">show</a> 
+            </div>
+        {% else %}
+            aucune entré
+        {% endfor %}
+    </dl>
+<ul>
+    <li>
+        <a href="{{ _route_crud.path('haven_cms_page_create', 'create') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock inside_theater %}

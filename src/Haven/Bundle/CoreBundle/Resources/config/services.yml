@@ -1,0 +1,65 @@
+services:
+  category.read_handler:
+        class:     Haven\Bundle\CoreBundle\Lib\Handler\CategoryReadHandler
+        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+        
+  category.persistence_handler:
+        class:     Haven\Bundle\CoreBundle\Lib\Handler\CategoryPersistenceHandler
+        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+
+  category.form_handler:
+      class:     Haven\Bundle\CoreBundle\Lib\Handler\CategoryFormHandler
+      arguments: ["@category.read_handler", "@security.context", "@form.factory"]
+      
+  haven_core.language.read_handler:
+        class:     Haven\Bundle\CoreBundle\Lib\Handler\LanguageReadHandler
+        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+        
+  haven_core.language.persistence_handler:
+        class:     Haven\Bundle\CoreBundle\Lib\Handler\LanguagePersistenceHandler
+        arguments: ["@haven_core.language.read_handler", "@doctrine.orm.entity_manager", "@security.context"]
+
+  haven_core.language.form_handler:
+      class:     Haven\Bundle\CoreBundle\Lib\Handler\LanguageFormHandler
+      arguments: ["@haven_core.language.read_handler", "@security.context", "@form.factory"]
+      
+  haven_core.culture.read_handler:
+        class:     Haven\Bundle\CoreBundle\Lib\Handler\CultureReadHandler
+        arguments: ["@doctrine.orm.entity_manager", "@security.context"]
+        
+  haven_core.culture.persistence_handler:
+        class:     Haven\Bundle\CoreBundle\Lib\Handler\CulturePersistenceHandler
+        arguments: ["@haven_core.culture.read_handler", "@haven_core.language.read_handler", "@doctrine.orm.entity_manager", "@security.context"]
+
+  haven_core.culture.form_handler:
+      class:     Haven\Bundle\CoreBundle\Lib\Handler\CultureFormHandler
+      arguments: ["@haven_core.culture.read_handler", "@haven_core.language.read_handler", "@security.context", "@form.factory"]
+      
+  notifier:
+      class:     Haven\Bundle\CoreBundle\Lib\Mailing\Notifier
+      arguments: ["@mailer", "@templating", "%notification%", "@translator"]
+      
+  uploader:
+      class:        Haven\Bundle\CoreBundle\Lib\Uploader
+      arguments:    [%kernel.root_dir%, %secure_upload_dir%]
+      
+  slugifier:
+      class:     Haven\Bundle\CoreBundle\Lib\Slugifier
+      
+  request_modifier:
+      class:     Haven\Bundle\CoreBundle\Lib\RequestModifier
+      arguments: ["@slugifier", "@uploader"]
+  
+  haven.form.type.translation:
+      class: Haven\Bundle\CoreBundle\Form\Type\TranslationType
+      arguments: ["@haven_core.language.read_handler"]
+      tags:
+          - { name: form.type, alias: translation }      
+          
+  nested_set_manager:
+      class:  Haven\Bundle\CoreBundle\Lib\NestedSet\Manager
+      arguments: ["@nested_set_config"]
+      
+  nested_set_config:
+      class:     Haven\Bundle\CoreBundle\Lib\NestedSet\Config
+      arguments: ["@doctrine.orm.entity_manager"]

@@ -1,0 +1,1907 @@
+Signup and PricingExplore GitHubFeaturesBlogSign in
+Star1,619 Fork536
+PUBLIC mailchimp / Email-Blueprints
+
+Code
+Network
+Pull Requests 2
+Issues 3
+Graphs
+Tags  Downloads
+branch: master
+ Files Commits Branches 1
+Email-Blueprints / templates / fancy-2-1-3-rightsidebar.html 
+ Fabio Carneiro a year ago Updated all templates to current MailChimp spec, reflecting May release.
+0 contributors
+name	age	history message
+..		
+2col-1-2-leftsidebar.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+2col-1-2-rightsidebar.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+2col-1-2.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+2col-2-1.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+2col-basic2column.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+3col-1-3-asym.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+3col-1-3-leftsidebar.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+3col-1-3-rightsidebar.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+3col-1-3.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+3col-3-1-asym.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+3col-3-1.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+3col-basic3column-asym.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+3col-basic3column.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+fancy-1-2-3.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+fancy-1-3-2.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+fancy-1-50-25-25.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+fancy-2-1-3-leftsidebar.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+fancy-2-1-3-rightsidebar.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+fancy-50-25-25-1.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+fancy-50-25-25.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+fancy-variablelayout.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+gallery-1-4-1.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+gallery-1-4-2.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+gallery-1-4.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+gallery-4-1.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+gallery-basicgallery.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+mobile-basicmobile.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+mobile-postcardmobile.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+simple-basic.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+simple-leftsidebar.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+simple-letterhead-centerlogo.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+simple-letterhead-leftlogo.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+simple-letterhead-rightlogo.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+simple-postcard.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+simple-rightsidebar.html	a year ago	Updated all templates to current MailChimp spec, reflecting May release. [Fabio Carneiro]
+file 912 lines (825 sloc) 49.237 kb EditRawBlameHistory
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884
+885
+886
+887
+888
+889
+890
+891
+892
+893
+894
+895
+896
+897
+898
+899
+900
+901
+902
+903
+904
+905
+906
+907
+908
+909
+910
+911
+912
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        <!-- Facebook sharing information tags -->
+        <meta property="og:title" content="*|MC:SUBJECT|*" />
+        
+        <title>*|MC:SUBJECT|*</title>
+		<style type="text/css">
+			/* Client-specific Styles */
+			#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
+			body{width:100% !important;} .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+			body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
+
+			/* Reset Styles */
+			body{margin:0; padding:0;}
+			img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+			table td{border-collapse:collapse;}
+			#backgroundTable{height:100% !important; margin:0; padding:0; width:100% !important;}
+
+			/* Template Styles */
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: COMMON PAGE ELEMENTS /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Page
+			* @section background color
+			* @tip Set the background color for your email. You may want to choose one that matches your company's branding.
+			* @theme page
+			*/
+			body, #backgroundTable{
+				/*@editable*/ background-color:#FAFAFA;
+			}
+
+			/**
+			* @tab Page
+			* @section email border
+			* @tip Set the border for your email.
+			*/
+			#templateContainer{
+				/*@editable*/ border: 1px solid #DDDDDD;
+			}
+
+			/**
+			* @tab Page
+			* @section heading 1
+			* @tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
+			* @style heading 1
+			*/
+			h1, .h1{
+				/*@editable*/ color:#202020;
+				display:block;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:34px;
+				/*@editable*/ font-weight:bold;
+				/*@editable*/ line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Page
+			* @section heading 2
+			* @tip Set the styling for all second-level headings in your emails.
+			* @style heading 2
+			*/
+			h2, .h2{
+				/*@editable*/ color:#202020;
+				display:block;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:30px;
+				/*@editable*/ font-weight:bold;
+				/*@editable*/ line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Page
+			* @section heading 3
+			* @tip Set the styling for all third-level headings in your emails.
+			* @style heading 3
+			*/
+			h3, .h3{
+				/*@editable*/ color:#202020;
+				display:block;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:26px;
+				/*@editable*/ font-weight:bold;
+				/*@editable*/ line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Page
+			* @section heading 4
+			* @tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
+			* @style heading 4
+			*/
+			h4, .h4{
+				/*@editable*/ color:#202020;
+				display:block;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:22px;
+				/*@editable*/ font-weight:bold;
+				/*@editable*/ line-height:100%;
+				margin-top:0;
+				margin-right:0;
+				margin-bottom:10px;
+				margin-left:0;
+				/*@editable*/ text-align:left;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: PREHEADER /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Header
+			* @section preheader style
+			* @tip Set the background color for your email's preheader area.
+			* @theme page
+			*/
+			#templatePreheader{
+				/*@editable*/ background-color:#FAFAFA;
+			}
+
+			/**
+			* @tab Header
+			* @section preheader text
+			* @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
+			*/
+			.preheaderContent div{
+				/*@editable*/ color:#505050;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:10px;
+				/*@editable*/ line-height:100%;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Header
+			* @section preheader link
+			* @tip Set the styling for your email's preheader links. Choose a color that helps them stand out from your text.
+			*/
+			.preheaderContent div a:link, .preheaderContent div a:visited, /* Yahoo! Mail Override */ .preheaderContent div a .yshortcuts /* Yahoo! Mail Override */{
+				/*@editable*/ color:#336699;
+				/*@editable*/ font-weight:normal;
+				/*@editable*/ text-decoration:underline;
+			}
+
+
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: HEADER /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Header
+			* @section header style
+			* @tip Set the background color and border for your email's header area.
+			* @theme header
+			*/
+			#templateHeader{
+				/*@editable*/ background-color:#FFFFFF;
+				/*@editable*/ border-bottom:0;
+			}
+
+			/**
+			* @tab Header
+			* @section header text
+			* @tip Set the styling for your email's header text. Choose a size and color that is easy to read.
+			*/
+			.headerContent{
+				/*@editable*/ color:#202020;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:34px;
+				/*@editable*/ font-weight:bold;
+				/*@editable*/ line-height:100%;
+				/*@editable*/ padding:0;
+				/*@editable*/ text-align:center;
+				/*@editable*/ vertical-align:middle;
+			}
+
+			/**
+			* @tab Header
+			* @section header link
+			* @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
+			*/
+			.headerContent a:link, .headerContent a:visited, /* Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Override */{
+				/*@editable*/ color:#336699;
+				/*@editable*/ font-weight:normal;
+				/*@editable*/ text-decoration:underline;
+			}
+
+			#headerImage{
+				height:auto;
+				max-width:600px;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: MAIN BODY & FULL-WIDTH BAND /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Body
+			* @section body style
+			* @tip Set the background color for your email's body area.
+			*/
+			#templateContainer, .bodyContent, .fullWidthBandContent{
+				/*@editable*/ background-color:#FFFFFF;
+			}
+
+			/**
+			* @tab Body
+			* @section body text
+			* @tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
+			* @theme main
+			*/
+			.bodyContent div, .fullWidthBandContent div{
+				/*@editable*/ color:#505050;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:14px;
+				/*@editable*/ line-height:150%;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Body
+			* @section body link
+			* @tip Set the styling for your email's main content links. Choose a color that helps them stand out from your text.
+			*/
+			.bodyContent div a:link, .bodyContent div a:visited, /* Yahoo! Mail Override */ .bodyContent div a .yshortcuts /* Yahoo! Mail Override */, .fullWidthBandContent div a:link, .fullWidthBandContent div a:visited, /* Yahoo! Mail Override */ .fullWidthBandContent div a .yshortcuts /* Yahoo! Mail Override */{
+				/*@editable*/ color:#336699;
+				/*@editable*/ font-weight:normal;
+				/*@editable*/ text-decoration:underline;
+			}
+
+			.bodyContent img, .fullWidthBandContent img{
+				display:inline;
+				height:auto;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: SIDEBAR /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Sidebar
+			* @section sidebar style
+			* @tip Set the background color for your email's sidebar area.
+			*/
+			#templateSidebar{
+				/*@editable*/ background-color:#FFFFFF;
+			}
+
+			/**
+			* @tab Sidebar
+			* @section sidebar text
+			* @tip Set the styling for your email's sidebar text. Choose a size and color that is easy to read.
+			*/
+			.sidebarContent div{
+				/*@editable*/ color:#505050;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:12px;
+				/*@editable*/ line-height:150%;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Sidebar
+			* @section sidebar link
+			* @tip Set the styling for your email's sidebar links. Choose a color that helps them stand out from your text.
+			*/
+			.sidebarContent div a:link, .sidebarContent div a:visited, /* Yahoo! Mail Override */ .sidebarContent div a .yshortcuts /* Yahoo! Mail Override */{
+				/*@editable*/ color:#336699;
+				/*@editable*/ font-weight:normal;
+				/*@editable*/ text-decoration:underline;
+			}
+
+			.sidebarContent img{
+				display:inline;
+				height:auto;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: MIDDLE COLUMNS; LEFT, RIGHT /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Middle Columns
+			* @section left column text
+			* @tip Set the styling for your email's left column text. Choose a size and color that is easy to read.
+			*/
+			.leftMidColumnContent{
+				/*@editable*/ background-color:#FFFFFF;
+			}
+
+			/**
+			* @tab Middle Columns
+			* @section left column text
+			* @tip Set the styling for your email's left column text. Choose a size and color that is easy to read.
+			*/
+			.leftMidColumnContent div{
+				/*@editable*/ color:#505050;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:14px;
+				/*@editable*/ line-height:150%;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Middle Columns
+			* @section left column link
+			* @tip Set the styling for your email's left column links. Choose a color that helps them stand out from your text.
+			*/
+			.leftMidColumnContent div a:link, .leftMidColumnContent div a:visited, /* Yahoo! Mail Override */ .leftMidColumnContent div a .yshortcuts /* Yahoo! Mail Override */{
+				/*@editable*/ color:#336699;
+				/*@editable*/ font-weight:normal;
+				/*@editable*/ text-decoration:underline;
+			}
+
+			.leftMidColumnContent img{
+				display:inline;
+				height:auto;
+			}
+
+			/**
+			* @tab Middle Columns
+			* @section right column text
+			* @tip Set the styling for your email's right column text. Choose a size and color that is easy to read.
+			*/
+			.rightMidColumnContent{
+				/*@editable*/ background-color:#FFFFFF;
+			}
+
+			/**
+			* @tab Middle Columns
+			* @section right column text
+			* @tip Set the styling for your email's right column text. Choose a size and color that is easy to read.
+			*/
+			.rightMidColumnContent div{
+				/*@editable*/ color:#505050;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:14px;
+				/*@editable*/ line-height:150%;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Middle Columns
+			* @section right column link
+			* @tip Set the styling for your email's right column links. Choose a color that helps them stand out from your text.
+			*/
+			.rightMidColumnContent div a:link, .rightMidColumnContent div a:visited, /* Yahoo! Mail Override */ .rightMidColumnContent div a .yshortcuts /* Yahoo! Mail Override */{
+				/*@editable*/ color:#336699;
+				/*@editable*/ font-weight:normal;
+				/*@editable*/ text-decoration:underline;
+			}
+
+			.rightMidColumnContent img{
+				display:inline;
+				height:auto;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: LOWER COLUMNS; LEFT, CENTER, RIGHT /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Lower Columns
+			* @section left column text
+			* @tip Set the styling for your email's left column text. Choose a size and color that is easy to read.
+			*/
+			.leftLowerColumnContent{
+				/*@editable*/ background-color:#FFFFFF;
+			}
+
+			/**
+			* @tab Lower Columns
+			* @section left column text
+			* @tip Set the styling for your email's left column text. Choose a size and color that is easy to read.
+			*/
+			.leftLowerColumnContent div{
+				/*@editable*/ color:#505050;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:14px;
+				/*@editable*/ line-height:150%;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Lower Columns
+			* @section left column link
+			* @tip Set the styling for your email's left column links. Choose a color that helps them stand out from your text.
+			*/
+			.leftLowerColumnContent div a:link, .leftLowerColumnContent div a:visited, /* Yahoo! Mail Override */ .leftLowerColumnContent div a .yshortcuts /* Yahoo! Mail Override */{
+				/*@editable*/ color:#336699;
+				/*@editable*/ font-weight:normal;
+				/*@editable*/ text-decoration:underline;
+			}
+
+			.leftLowerColumnContent img{
+				display:inline;
+				height:auto;
+			}
+
+			/**
+			* @tab Lower Columns
+			* @section center column text
+			* @tip Set the styling for your email's center column text. Choose a size and color that is easy to read.
+			*/
+			.centerLowerColumnContent{
+				/*@editable*/ background-color:#FFFFFF;
+			}
+
+			/**
+			* @tab Lower Columns
+			* @section center column text
+			* @tip Set the styling for your email's center column text. Choose a size and color that is easy to read.
+			*/
+			.centerLowerColumnContent div{
+				/*@editable*/ color:#505050;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:14px;
+				/*@editable*/ line-height:150%;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Lower Columns
+			* @section center column link
+			* @tip Set the styling for your email's center column links. Choose a color that helps them stand out from your text.
+			*/
+			.centerLowerColumnContent div a:link, .centerLowerColumnContent div a:visited, /* Yahoo! Mail Override */ .centerLowerColumnContent div a .yshortcuts /* Yahoo! Mail Override */{
+				/*@editable*/ color:#336699;
+				/*@editable*/ font-weight:normal;
+				/*@editable*/ text-decoration:underline;
+			}
+
+			.centerLowerColumnContent img{
+				display:inline;
+				height:auto;
+			}
+
+			/**
+			* @tab Lower Columns
+			* @section right column text
+			* @tip Set the styling for your email's right column text. Choose a size and color that is easy to read.
+			*/
+			.rightLowerColumnContent{
+				/*@editable*/ background-color:#FFFFFF;
+			}
+
+			/**
+			* @tab Lower Columns
+			* @section right column text
+			* @tip Set the styling for your email's right column text. Choose a size and color that is easy to read.
+			*/
+			.rightLowerColumnContent div{
+				/*@editable*/ color:#505050;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:14px;
+				/*@editable*/ line-height:150%;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Lower Columns
+			* @section right column link
+			* @tip Set the styling for your email's right column links. Choose a color that helps them stand out from your text.
+			*/
+			.rightLowerColumnContent div a:link, .rightLowerColumnContent div a:visited, /* Yahoo! Mail Override */ .rightLowerColumnContent div a .yshortcuts /* Yahoo! Mail Override */{
+				/*@editable*/ color:#336699;
+				/*@editable*/ font-weight:normal;
+				/*@editable*/ text-decoration:underline;
+			}
+
+			.rightLowerColumnContent img{
+				display:inline;
+				height:auto;
+			}
+
+			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: FOOTER /\/\/\/\/\/\/\/\/\/\ */
+
+			/**
+			* @tab Footer
+			* @section footer style
+			* @tip Set the background color and top border for your email's footer area.
+			* @theme footer
+			*/
+			#templateFooter{
+				/*@editable*/ background-color:#FFFFFF;
+				/*@editable*/ border-top:0;
+			}
+
+			/**
+			* @tab Footer
+			* @section footer text
+			* @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
+			* @theme footer
+			*/
+			.footerContent div{
+				/*@editable*/ color:#707070;
+				/*@editable*/ font-family:Arial;
+				/*@editable*/ font-size:12px;
+				/*@editable*/ line-height:125%;
+				/*@editable*/ text-align:left;
+			}
+
+			/**
+			* @tab Footer
+			* @section footer link
+			* @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
+			*/
+			.footerContent div a:link, .footerContent div a:visited, /* Yahoo! Mail Override */ .footerContent div a .yshortcuts /* Yahoo! Mail Override */{
+				/*@editable*/ color:#336699;
+				/*@editable*/ font-weight:normal;
+				/*@editable*/ text-decoration:underline;
+			}
+
+			.footerContent img{
+				display:inline;
+			}
+
+			/**
+			* @tab Footer
+			* @section social bar style
+			* @tip Set the background color and border for your email's footer social bar.
+			* @theme footer
+			*/
+			#social{
+				/*@editable*/ background-color:#FAFAFA;
+				/*@editable*/ border:0;
+			}
+
+			/**
+			* @tab Footer
+			* @section social bar style
+			* @tip Set the background color and border for your email's footer social bar.
+			*/
+			#social div{
+				/*@editable*/ text-align:center;
+			}
+
+			/**
+			* @tab Footer
+			* @section utility bar style
+			* @tip Set the background color and border for your email's footer utility bar.
+			* @theme footer
+			*/
+			#utility{
+				/*@editable*/ background-color:#FFFFFF;
+				/*@editable*/ border:0;
+			}
+
+			/**
+			* @tab Footer
+			* @section utility bar style
+			* @tip Set the background color and border for your email's footer utility bar.
+			*/
+			#utility div{
+				/*@editable*/ text-align:center;
+			}
+
+			#monkeyRewards img{
+				max-width:190px;
+			}
+		</style>
+	</head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    	<center>
+        	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
+            	<tr>
+                	<td align="center" valign="top">
+                        <!-- // Begin Template Preheader \\ -->
+                        <table border="0" cellpadding="10" cellspacing="0" width="600" id="templatePreheader">
+                            <tr>
+                                <td valign="top" class="preheaderContent">
+                                
+                                	<!-- // Begin Module: Standard Preheader \ -->
+                                    <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                    	<tr>
+                                        	<td valign="top">
+                                            	<div mc:edit="std_preheader_content">
+                                                	 Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
+                                                </div>
+                                            </td>
+                                            <!-- *|IFNOT:ARCHIVE_PAGE|* -->
+											<td valign="top" width="190">
+                                            	<div mc:edit="std_preheader_links">
+                                                	Is this email not displaying correctly?<br /><a href="*|ARCHIVE|*" target="_blank">View it in your browser</a>.
+                                                </div>
+                                            </td>
+											<!-- *|END:IF|* -->
+                                        </tr>
+                                    </table>
+                                	<!-- // End Module: Standard Preheader \ -->
+                                
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // End Template Preheader \\ -->
+                    	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
+                        	<tr>
+                            	<td align="center" valign="top">
+                                    <!-- // Begin Template Header \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader">
+                                        <tr>
+                                            <td class="headerContent">
+                                            
+                                            	<!-- // Begin Module: Standard Header Image \\ -->
+                                            	<img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/placeholder_600.gif" style="max-width:600px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
+                                            	<!-- // End Module: Standard Header Image \\ -->
+                                            
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Header \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top">
+                                    <!-- // Begin Template Body \\ -->
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+                                    	<tr>
+                                        	<td valign="top" width="400">
+                                            	<table border="0" cellpadding="0" cellspacing="0" width="400">
+                                                	<tr>
+                                                    	<td valign="top">
+                                                        	<table border="0" cellpadding="0" cellspacing="0" width="400">
+                                                            	<tr>
+                                                                	<td valign="top" class="bodyContent">
+                                                        
+                                                                        <!-- // Begin Module: Standard Content \\ -->
+                                                                        <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                                            <tr>
+                                                                                <td valign="top">
+						                                                            <div mc:edit="std_content00">
+						                                                                <h1 class="h1">Heading 1</h1>
+						                                                                <h2 class="h2">Heading 2</h2>
+						                                                                <h3 class="h3">Heading 3</h3>
+						                                                                <h4 class="h4">Heading 4</h4>
+						                                                                <strong>Getting started:</strong> Customize your template by clicking on the style editor tabs up above. Set your fonts, colors, and styles. After setting your styling is all done you can click here in this area, delete the text, and start adding your own awesome content!
+						                                                                <br />
+						                                                                <br />
+						                                                                After you enter your content, highlight the text you want to style and select the options you set in the style editor in the "styles" drop down box. Want to <a href="http://www.mailchimp.com/kb/article/im-using-the-style-designer-and-i-cant-get-my-formatting-to-change" target="_blank">get rid of styling on a bit of text</a>, but having trouble doing it? Just use the "remove formatting" button to strip the text of any formatting and reset your style.
+						                                                            </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!-- // End Module: Standard Content \\ -->
+                                                                        
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                    	<td valign="top">
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="400">
+                                                                <tr>
+                                                                    <td valign="top" width="180" class="leftMidColumnContent">
+                                                                    
+                                                                        <!-- // Begin Module: Top Image with Content \\ -->
+                                                                        <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                                            <tr mc:repeatable>
+                                                                                <td valign="top">
+                                                                                    <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/placeholder_160.gif" style="max-width:160px;" mc:label="image" mc:edit="tiwc200_image01" />
+                                                                                    <div mc:edit="tiwc200_content01">
+						 	                                                            <h4 class="h4">Heading 4</h4>
+						                                                                <strong>Repeatable content blocks:</strong> Repeatable sections are noted with plus and minus signs so that you can add and subtract content blocks. You can also <a href="http://www.mailchimp.com/kb/article/how-do-i-work-with-repeatable-content-blocks" target="_blank">get a little fancy</a>: repeat blocks and remove all text to make image "gallery" sections, or do the opposite and remove images for text-only blocks!
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!-- // End Module: Top Image with Content \\ -->
+                                                                    
+                                                                    </td>
+                                                                    <td valign="top" width="180" class="rightMidColumnContent">
+                                                                    
+                                                                        <!-- // Begin Module: Top Image with Content \\ -->
+                                                                        <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                                            <tr mc:repeatable>
+                                                                                <td valign="top">
+                                                                                    <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/placeholder_160.gif" style="max-width:160px;" mc:label="image" mc:edit="tiwc200_image02" />
+                                                                                    <div mc:edit="tiwc200_content02">
+ 						 	                                                            <h4 class="h4">Heading 4</h4>
+						                                                                <strong>Repeatable content blocks:</strong> Repeatable sections are noted with plus and minus signs so that you can add and subtract content blocks. You can also <a href="http://www.mailchimp.com/kb/article/how-do-i-work-with-repeatable-content-blocks" target="_blank">get a little fancy</a>: repeat blocks and remove all text to make image "gallery" sections, or do the opposite and remove images for text-only blocks!
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!-- // End Module: Top Image with Content \\ -->
+                                                                    
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>                                                
+                                            </td>
+                                        	<!-- // Begin Sidebar \\  -->
+                                        	<td valign="top" width="200" id="templateSidebar">
+                                            	<table border="0" cellpadding="0" cellspacing="0" width="200">
+                                                	<tr>
+                                                    	<td valign="top" class="sidebarContent">
+                                                        
+                                                            <!-- // Begin Module: Social Block with Icons \\ -->
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                <tr>
+                                                                    <td valign="top" style="padding-top:10px; padding-right:20px; padding-left:20px;">
+                                                                        <table border="0" cellpadding="0" cellspacing="4">
+                                                                            <tr mc:hideable>
+                                                                                <td align="left" valign="middle" width="16">
+                                                                                    <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/sfs_icon_facebook.png" style="margin:0 !important;" />
+                                                                                </td>
+                                                                                <td align="left" valign="top">
+                                                                                    <div mc:edit="sbwi_link_one">
+                                                                                        <a href="*|FACEBOOK:PROFILEURL|*">Friend on Facebook</a>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr mc:hideable>
+                                                                                <td align="left" valign="middle" width="16">
+                                                                                    <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/sfs_icon_twitter.png" style="margin:0 !important;" />
+                                                                                </td>
+                                                                                <td align="left" valign="top">
+                                                                                    <div mc:edit="sbwi_link_two">
+                                                                                        <a href="*|TWITTER:PROFILEURL|*">Follow on Twitter</a>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr mc:hideable>
+                                                                                <td align="left" valign="middle" width="16">
+                                                                                    <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/sfs_icon_forward.png" style="margin:0 !important;" />
+                                                                                </td>
+                                                                                <td align="left" valign="top">
+                                                                                    <div mc:edit="sbwi_link_three">
+                                                                                        <a href="*|FORWARD|*">Forward to a Friend</a>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- // End Module: Social Block with Icons \\ -->
+                                                        
+                                                            <!-- // Begin Module: Top Image with Content \\ -->
+                                                            <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                                <tr mc:repeatable>
+                                                                    <td valign="top">
+                                                                        <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/placeholder_160.gif" style="max-width:160px;" mc:label="image" mc:edit="tiwc200_image00" />
+                                                                        <div mc:edit="tiwc200_content00">
+			 	                                                            <h4 class="h4">Heading 4</h4>
+			                                                                <strong>Repeatable content blocks:</strong> Repeatable sections are noted with plus and minus signs so that you can add and subtract content blocks. You can also <a href="http://www.mailchimp.com/kb/article/how-do-i-work-with-repeatable-content-blocks" target="_blank">get a little fancy</a>: repeat blocks and remove all text to make image "gallery" sections, or do the opposite and remove images for text-only blocks!
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- // End Module: Top Image with Content \\ -->
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <!-- // End Sidebar \\ -->
+                                        </tr>
+                                        <tr>
+                                        	<td colspan="2" valign="top" width="600">
+                                            	<table border="0" cellpadding="0" cellspacing="0" width="600">
+                                                	<tr>
+                                                    	<td valign="top" class="fullWidthBandContent">
+                                                        
+                                                            <!-- // Begin Module: Standard Content \\ -->
+                                                            <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                                <tr>
+                                                                    <td valign="top">
+                                                                        <div mc:edit="std_content01">
+                                                                            <strong>Basic content area</strong>. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the <em>Semantics</em>, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary.
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- // End Module: Standard Content \\ -->
+                                                        
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        	<td colspan="2" valign="top" width="600">
+                                            	<table border="0" cellpadding="0" cellspacing="0" width="600">
+                                                	<tr>
+                                                    	<td valign="top" width="180" class="leftLowerColumnContent">
+                                                        
+                                                            <!-- // Begin Module: Top Image with Content \\ -->
+                                                            <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                                <tr mc:repeatable>
+                                                                    <td valign="top">
+                                                                        <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/placeholder_160.gif" style="max-width:160px;" mc:label="image" mc:edit="tiwc200_image03" />
+                                                                        <div mc:edit="tiwc200_content03">
+ 			 	                                                            <h4 class="h4">Heading 4</h4>
+			                                                                <strong>Repeatable content blocks:</strong> Repeatable sections are noted with plus and minus signs so that you can add and subtract content blocks. You can also <a href="http://www.mailchimp.com/kb/article/how-do-i-work-with-repeatable-content-blocks" target="_blank">get a little fancy</a>: repeat blocks and remove all text to make image "gallery" sections, or do the opposite and remove images for text-only blocks!
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- // End Module: Top Image with Content \\ -->
+                                                        
+                                                        </td>
+                                                        <td valign="top" width="180" class="centerLowerColumnContent">
+                                                        
+                                                            <!-- // Begin Module: Top Image with Content \\ -->
+                                                            <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                                <tr mc:repeatable>
+                                                                    <td valign="top">
+                                                                        <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/placeholder_160.gif" style="max-width:160px;" mc:label="image" mc:edit="tiwc200_image04" />
+                                                                        <div mc:edit="tiwc200_content04">
+ 			 	                                                            <h4 class="h4">Heading 4</h4>
+			                                                                <strong>Repeatable content blocks:</strong> Repeatable sections are noted with plus and minus signs so that you can add and subtract content blocks. You can also <a href="http://www.mailchimp.com/kb/article/how-do-i-work-with-repeatable-content-blocks" target="_blank">get a little fancy</a>: repeat blocks and remove all text to make image "gallery" sections, or do the opposite and remove images for text-only blocks!
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- // End Module: Top Image with Content \\ -->
+                                                        
+                                                        </td>
+                                                        <td valign="top" width="180" class="rightLowerColumnContent">
+                                                        
+                                                            <!-- // Begin Module: Top Image with Content \\ -->
+                                                            <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                                <tr mc:repeatable>
+                                                                    <td valign="top">
+                                                                        <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/placeholder_160.gif" style="max-width:160px;" mc:label="image" mc:edit="tiwc200_image05" />
+                                                                        <div mc:edit="tiwc200_content05">
+			 	                                                            <h4 class="h4">Heading 4</h4>
+			                                                                <strong>Repeatable content blocks:</strong> Repeatable sections are noted with plus and minus signs so that you can add and subtract content blocks. You can also <a href="http://www.mailchimp.com/kb/article/how-do-i-work-with-repeatable-content-blocks" target="_blank">get a little fancy</a>: repeat blocks and remove all text to make image "gallery" sections, or do the opposite and remove images for text-only blocks!
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- // End Module: Top Image with Content \\ -->
+                                                        
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Body \\ -->
+                                </td>
+                            </tr>
+                        	<tr>
+                            	<td align="center" valign="top">
+                                    <!-- // Begin Template Footer \\ -->
+                                	<table border="0" cellpadding="10" cellspacing="0" width="600" id="templateFooter">
+                                    	<tr>
+                                        	<td valign="top" class="footerContent">
+                                            
+                                                <!-- // Begin Module: Standard Footer \\ -->
+                                                <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td colspan="2" valign="middle" id="social">
+                                                            <div mc:edit="std_social">
+                                                                &nbsp;<a href="*|TWITTER:PROFILEURL|*">follow on Twitter</a> | <a href="*|FACEBOOK:PROFILEURL|*">friend on Facebook</a> | <a href="*|FORWARD|*">forward to a friend</a>&nbsp;
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" width="350">
+                                                            <div mc:edit="std_footer">
+																<em>Copyright &copy; *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
+																<br />
+																*|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*
+																<br />
+																<strong>Our mailing address is:</strong>
+																<br />
+																*|HTML:LIST_ADDRESS_HTML|**|END:IF|* 
+                                                            </div>
+                                                        </td>
+                                                        <td valign="top" width="190" id="monkeyRewards">
+                                                            <div mc:edit="monkeyrewards">
+                                                                *|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" valign="middle" id="utility">
+                                                            <div mc:edit="std_utility">
+                                                                &nbsp;<a href="*|UNSUB|*">unsubscribe from this list</a> | <a href="*|UPDATE_PROFILE|*">update subscription preferences</a>&nbsp;
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- // End Module: Standard Footer \\ -->
+                                            
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // End Template Footer \\ -->
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>
+
+
+GitHub Links
+GitHub
+About
+Blog
+Features
+Contact & Support
+Training
+GitHub Enterprise
+Site Status
+Clients
+GitHub for Mac
+GitHub for Windows
+GitHub for Eclipse
+GitHub Mobile Apps
+Tools
+Gauges: Web analytics
+Speaker Deck: Presentations
+Gist: Code snippets
+Extras
+Job Board
+GitHub Shop
+The Octodex
+Documentation
+GitHub Help
+Developer API
+GitHub Flavored Markdown
+GitHub Pages
+Terms of ServicePrivacySecurity© 2012 GitHub Inc. All rights reserved. 
